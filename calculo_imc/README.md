@@ -2,8 +2,9 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 ![Status](https://img.shields.io/badge/Concluído-brightgreen?style=for-the-badge)
+
 Este projeto está destinado para ajudar pessoas a saber em qual situação se encontra o seu peso.
-___
+
 ## ℹ️ Dados do Sistema
 ### Fórmula 
 $$IMC = \frac{Peso (kg)}{Altura (m)^2}$$
@@ -28,6 +29,7 @@ ___
 > | SOBREPESO               |  85,0 – 95,0   
 > | OBESIDADE               | MAIOR QUE 95,0 
 * 💡Exemplo: 🟢 Peso Ideal, 🟡 Sobrepeso, 🔴 Obesidade.
+___
 ## 🚀 Como rodar o projeto
 
 1. Certifique-se de ter o **Python 3.x** instalado.
