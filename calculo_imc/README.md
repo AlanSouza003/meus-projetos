@@ -1,16 +1,14 @@
 # ⚖️ Calculo IMC
-
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 ![Status](https://img.shields.io/badge/Concluído-brightgreen?style=for-the-badge)
----
 
 Este projeto está destinado para ajudar pessoas a saber em qual situação se encontra o seu peso.
 ___
 ## ℹ️ Dados do Sistema
-___
 ### Fórmula 
 $$IMC = \frac{Peso (kg)}{Altura (m)^2}$$
+
 Este é o cálculo matemático utilizado para rodar o sistema.
 ___
 >### Tabela de Referência
