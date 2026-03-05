@@ -4,6 +4,10 @@
 ![Status](https://img.shields.io/badge/Concluído-brightgreen?style=for-the-badge)
 
 Este projeto está destinado para ajudar pessoas a saber em qual situação se encontra o seu peso.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18cdeb8c71289ee23f4d1d7d7166503311e51e0a
 ## ℹ️ Dados do Sistema
 ### Fórmula 
 $$IMC = \frac{Peso (kg)}{Altura (m)^2}$$
