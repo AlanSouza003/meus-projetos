@@ -29,7 +29,6 @@ ___
 > | SOBREPESO               |  85,0 – 95,0   
 > | OBESIDADE               | MAIOR QUE 95,0 
 * 💡Exemplo: 🟢 Peso Ideal, 🟡 Sobrepeso, 🔴 Obesidade.
-___
 ## 🚀 Como rodar o projeto
 
 1. Certifique-se de ter o **Python 3.x** instalado.
