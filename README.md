@@ -13,7 +13,6 @@ _____
 ### 1. Calculadora de IMC
 Um 'script' bem simples em python que recebe o peso e altura do usuário e retorna o IMC com a
 devida classificação (Abaixo do Peso, Peso Ideal, Sobrepeso, etc).
-* **Status:** Concluído ✅
-* [Ver Código](https://github.com/AlanSouza003/meus-projetos/tree/main/calculo_imc) 
+* **Status:** Concluído ✅ [Ver Código](https://github.com/AlanSouza003/meus-projetos/tree/main/calculo_imc) 
 
 💡 _**Estudando e evoluindo um commit por vez.**_
