@@ -8,7 +8,6 @@ _____
 * **Linguagens:** Python 3.13
 * **Editor:** Pycharm
 * **Versionamento:** Git
-___
 ## 📂 Projetos Atuais
 
 ### 1. Calculadora de IMC
@@ -16,5 +15,4 @@ Um 'script' bem simples em python que recebe o peso e altura do usuário e retor
 devida classificação (Abaixo do Peso, Peso Ideal, Sobrepeso, etc).
 * **Status:** Concluído ✅
 * [Ver Código](https://github.com/AlanSouza003/meus-projetos/tree/main/calculo_imc)
-___
 💡 _**Estudando e evoluindo um commit por vez.**_
