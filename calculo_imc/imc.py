@@ -13,6 +13,10 @@ peso_input = input(f'{cor['branco']}Informe o peso: {cor["limpa"]}')
 peso = float(peso_input.replace(',','.'))
 altura_input = input(f'{cor['branco']}Informe a altura: {cor['limpa']}')
 altura = float(altura_input.replace(',','.'))
+imc = peso / (altura ** 2)
+imc_format = f'{imc:.2f}'
+if ',' in peso_input or ',' in altura_input:
+    imc_format = imc_format.replace('.', ',')
 print(f'{cor['roxo']}PROCESSANDO...{cor["limpa"]}')
 sleep(3)
 print(f'{cor['branco']}-{cor['limpa']}'*20)
@@ -24,38 +28,31 @@ print(f'{cor['branco']}PESO: {peso_input}KG{cor['limpa']}')
 print(f'{cor['branco']}ALTURA: {altura_input}M{cor['limpa']}')
 #ADULTO
 if idade >= 12:
-    imc = peso / (altura ** 2)
-    imc_format = f'{imc:.2f}'
-    if ',' in peso_input or ',' in altura_input:
-        imc_format = imc_format.replace('.', ',')
-        print(f'{cor['branco']}IMC: {imc_format}{cor['limpa']}')
-        print(f'{cor['branco']}VOCÊ ESTA: {cor['limpa']}', end='')
+    print(f'{cor['branco']}IMC: {imc_format}{cor['limpa']}')
+    print(f'{cor['branco']}VOCÊ ESTA: {cor['limpa']}', end='')
     if imc < 18.5:
         print(f'{cor['vermelho']}ABAIXO DO PESO{cor["limpa"]}')
-    elif imc <= 25:
+    elif imc < 18.5 or imc <= 25:
         print(f'{cor['verde']}PESO IDEAL{cor["limpa"]}')
-    elif imc > 25 or imc <= 30:
+    elif imc < 25 or imc <= 30.99:
         print(f'{cor['amarelo']}SOBREPESO{cor["limpa"]}')
-    elif imc > 30 or imc <= 35:
+    elif imc < 30 or imc <= 35.99:
         print(f'{cor['vermelho']}OBESIDADE GRAU I{cor["limpa"]}')
-    elif imc > 35 or imc <= 40:
+    elif imc < 35 or imc <= 40.99:
         print(f'{cor['vermelho']}OBESIDADE GRAU II{cor["limpa"]}')
     elif imc > 40:
         print(f'{cor['vermelho']}OBESIDADE GRAU III{cor["limpa"]}')
+
 # CRIANÇA
 else:
     if idade >= 1 or idade < 11:
-        percentil = peso / (altura ** 2)
-        percentil_format = f'{percentil:.2f}'
-        if ',' in peso_input or ',' in altura_input:
-            percentil_format = percentil_format.replace('.', ',')
-            print(f'{cor['branco']}IMC: {percentil_format}{cor['limpa']}')
-            print(f'{cor['branco']}VOCÊ ESTA: {cor['limpa']}', end='')
-        if percentil < 5:
+        print(f'{cor['branco']}PERCENTIL: {imc_format}{cor['limpa']}')
+        print(f'{cor['branco']}VOCÊ ESTA: {cor['limpa']}', end='')
+        if imc < 5:
             print(f'{cor['vermelho']}BAIXO PESO (SUBNUTRIÇÃO){cor["limpa"]}')
-        elif percentil < 5 or percentil <= 85:
+        elif imc < 5 or imc <= 85:
             print(f'{cor['verde']}PESO SAUDÁVEL(ADEQUADO){cor["limpa"]}')
-        elif percentil > 85 or percentil <= 95:
+        elif imc < 85 or imc <= 95:
             print(f'{cor['amarelo']}SOBREPESO{cor["limpa"]}')
-        elif percentil > 95:
+        elif imc > 95:
             print(f'{cor['vermelho']}OBESIDADE MORBIDA{cor["limpa"]}')
