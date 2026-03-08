@@ -1,4 +1,5 @@
 import ttg
+from time import sleep
 # Titulo
 print('-=' * 12)
 print(f'{'NÚMEROS BINÁRIOS':^25}')
@@ -38,7 +39,44 @@ elif escolhido == 2:
     # Retornando ao usuário o valor convertido em decimal
     print(f'VALOR BINÁRIO: {binario}\n'
           f'VALOR INTEIRO: {decimal}')
-# elif escolhido == 3:
+elif escolhido == 3:
+    # Titulo
+    print('-' * 25)
+    print(f'{'SOMANDO NÚMEROS ':^25}\n'
+          f'{'BINÁRIOS':^25}')
+    print('-' * 25)
+    print('''ESCOLHA UMA DAS OPÇÕES ABAIXO:
+[ 1 ] ADIÇÃO
+[ 2 ] SUBTRAÇÃO''')
+    escolha = int(input('Digite o valor: '))
+    if escolha == 1:
+         num = int(input('DIGITE QUANTAS ADIÇÕES DESEJA: '))
+         if num == 1:
+            print(f'CERTO. VAMOS REALIZAR {num} ADIÇÃO.')
+            n1_str = input('Primeiro valor binario: ')
+            n2_str = input('Segundo valor binario: ')
+            n1_dec = int(n1_str, 2)
+            n2_dec = int(n2_str, 2)
+            somar_dec = n1_dec + n2_dec
+            result_bin = bin(somar_dec)
+            print('PROCESSANDO...')
+            sleep(3)
+            print('RESULTADO')
+            print(f'A soma entre {n1_str} + {n2_str} é = {result_bin[2:]}')
+         elif num == 2:
+            print(f'CERTO. VAMOS REALIZAR {num} ADIÇÃO.')
+            n1_str = input('Primeiro valor binário: ')
+            n2_str = input('Segundo valor binário: ')
+            n3_str = input('Terceiro valor binário: ')
+            n1_dec = int(n1_str, 2)
+            n2_dec = int(n2_str, 2)
+            n3_dec = int(n3_str, 2)
+            somar_dec = n1_dec + n2_dec + n3_dec
+            resut_bin = bin(somar_dec)
+            print('PROCESSANDO...')
+            sleep(3)
+            print('RESULTADO')
+            print(f'A soma entre {n1_str} + {n2_str} + é = {resut_bin[2:]}')
 # elif escolhido == 4:
 # elif escolhido == 5:
 # else:
