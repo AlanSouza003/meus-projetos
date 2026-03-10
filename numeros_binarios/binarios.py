@@ -377,18 +377,26 @@ elif escolhido == 4:
 elif escolhido == 5:
         titulo = 'EXPRESSÇÕES BOOLEANAS'
         print(f'{cor['branco']}-{cor['limpa']}' * 25)
-        valor1 = input('Primeira proposição: ')
-        valor2 = input('Segunda proposição: ')
-        funcao = input('Qual o operador? ')
+        print(f'{cor['ciano']}{titulo:^25}{cor['limpa']}')
+        print(f'{cor['branco']}-{cor['limpa']}' * 25)
+        valor1 = input(f'{cor['branco']}Primeira Proposição: {cor['limpa']}')
+        valor2 = input(f'{cor['branco']}Segunda Proposição: {cor['limpa']}')
+        funcao = input(f'{cor['branco']}Qual o Operador? {cor['limpa']}')
         if funcao == 'and' or funcao == 'or':
-            neg = input('Esta negativado? ').upper().strip()
-            tabela = input('ATÉ QUE PROPOSIÇÃO DESEJA IR? ').lower()
+            neg = input(f'{cor['vermelho']}Esta Negativado? {cor['limpa']}').upper().strip()
+            tabela = input(f'{cor['branco']}ATÉ QUE PROPOSIÇÃO DESEJA IR? {cor['limpa']}').lower()
             if neg == 'SIM':
-                print('O QUE ESTA NEGATIVADO?')
-                print(f'OPÇÃO [1]: "{valor1}"')
-                print(f'OPÇÃO [2]: "{valor2}"')
-                print(f'OPÇÃO [3]: "{valor1} {funcao} {valor2}"')
-                escolha = int(input('Digite a opção: '))
+                print(f'{cor['amarelo']}O QUE ESTA NEGATIVADO?{cor['limpa']}')
+                print(f'{cor['branco']}OPÇÃO{cor ['limpa']} {cor['verde']}[1]{cor['limpa']}'
+                      f'{cor['branco']}: "{cor['limpa']}'
+                      f'{cor['vermelho']}not ({valor1}){cor['limpa']}{cor['branco']}"{cor['limpa']}')
+                print(f'{cor['branco']}OPÇÃO{cor ['limpa']} {cor['verde']}[2]{cor['limpa']}'
+                      f'{cor['branco']}: "{cor['limpa']}{cor['vermelho']}not ({valor2}){cor['limpa']}'
+                      f'{cor['branco']}"{cor['limpa']}')
+                print(f'{cor['branco']}OPÇÃO{cor ['limpa']} {cor['verde']}[3]{cor['limpa']}'
+                      f'{cor['branco']}: "{cor['limpa']}{cor['vermelho']}'
+                      f'not ({valor1} {funcao} {valor2}){cor['limpa']}{cor['branco']}"{cor['limpa']}')
+                escolha = int(input(f'DIGITE A OPÇÃO: '))
                 if escolha == 1 and tabela == 'b':
                     tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'], ascending=True)
                     tabela_str = str(tabela)
