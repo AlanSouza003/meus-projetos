@@ -1,256 +1,618 @@
 import ttg
 from time import sleep
 cor = {'limpa':'\033[0m', 'vermelho':'\033[1;91m', 'verde':'\033[1;92m', 'ciano':'\033[1;96m',
-       'amarelo':'\033[1;93m'}
+       'amarelo':'\033[1;93m', 'branco':'\033[1;97m', 'roxo':'\033[1;95m'}
 # Titulo
-print('-=' * 12)
-print(f'{'NÚMEROS BINÁRIOS':^25}')
-print('-=' * 12)
+print(f'{cor['branco']}-={cor['limpa']}' * 12)
+print(f'{cor['ciano']}{'NÚMEROS BINÁRIOS':^25}{cor['limpa']}')
+print(f'{cor['branco']}-={cor['limpa']}' * 12)
 # Pedindo para o usuário escolher umas das opções
-print('''ESCOLHA A OPÇÃO DESEJADA:
-[ 1 ] CONVERSÃO DE BINÁRIOS PARA DÉCIMAL
-[ 2 ] CONVERSÃO DE DÉCIMAL PARA BINÁRIO
-[ 3 ] SOMANDO NÚMEROS BINÁRIOS
-[ 4 ] VISUALIZAR A TABELA VERDADE
-[ 5 ] REALIZAR CALCULOS EXPRESSÕES BOOLEANAS''')
-escolhido = int(input('Digite o número da sua opção: '))
+print(f'''{cor['amarelo']}ESCOLHA A OPÇÃO DESEJADA:{cor['limpa']}
+{cor['verde']}[ 1 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE BINÁRIOS PARA DÉCIMAL{cor['limpa']}
+{cor['verde']}[ 2 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE DÉCIMAL PARA BINÁRIO{cor['limpa']}
+{cor['verde']}[ 3 ]{cor['limpa']} {cor['branco']}SOMANDO NÚMEROS BINÁRIOS{cor['limpa']}
+{cor['verde']}[ 4 ]{cor['limpa']} {cor['branco']}VISUALIZAR A TABELA VERDADE{cor['limpa']}
+{cor['verde']}[ 5 ]{cor['limpa']} {cor['branco']}REALIZAR CALCULOS EXPRESSÕES BOOLEANAS{cor['limpa']}''')
+escolhido = int(input(f'{cor['roxo']}DIGITE O NÚMERO DA SUA OPÇÃO: {cor['limpa']}'))
 # Estrutura condicional aninhada para realização das operações que o
 # usuário escolheu.
 if escolhido == 1:
     #Titulo
-    print('-' * 25)
-    print(f'{'CONVERSOR DE DECIMAL':^25}\n'
-          f'{'PARA BINÁRIO':^25}')
-    print('-' * 25)
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
+    print(f'{cor['ciano']}{'CONVERSOR DE DECIMAL':^25}\n'
+          f'{'PARA BINÁRIO':^25}{cor['limpa']}')
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
     # Perguntando ao usuário o valor da conversão
-    valor = int(input('Digite um valor inteiro: '))
+    valor = int(input(f'{cor['branco']}Digite um valor inteiro: {cor['limpa']}'))
     # Calculo da conversão de décimal para binário
     binario = bin(valor)
+    binario_str = str(binario[2:])
+    binario_str = binario_str.replace('1', 'V').replace('0', 'F')
+    binario_colorido = (binario_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                        ('V', f'{cor['verde']}1{cor['limpa']}'))
     # Retornando o valor decimal e binário que o usuário escolheu
-    print(f'VALOR INTEIRO: {valor}\n'
-          f'VALOR BINÁRIO: {binario[2:]}')
+    print(f'{cor['verde']}VALOR INTEIRO{cor['limpa']}{cor['branco']}: {valor}{cor['limpa']}\n'
+          f'{cor['verde']}VALOR BINÁRIO:{cor['limpa']} {binario_colorido}')
 elif escolhido == 2:
     # Titulo
-    print('-' * 25)
-    print(f'{'CONVERSOR DE BINÁRIO':^25}\n'
-          f'{'PARA DÉCIMAL':^25}')
-    print('-' * 25)
+    titulo = f'CONVERSOR DE BINÁRIO'
+    titulo2 = f'PARA DÉCIMAL'
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
+    print(f'{cor['ciano']}{titulo:^25}{cor['limpa']}')
+    print(f'{cor['ciano']}{titulo2:^25}{cor['limpa']}')
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
     # Pedindo ao usuário para digitar um valor em binário.
-    binario = input('Digite um valor em binário: ')
+    binario = input(f'{cor['branco']}Digite um valor em binário: {cor['limpa']}')
     decimal = int(binario, 2)
+    binario_str = str(binario)
+    binario_str = binario_str.replace('1', 'V').replace('0', 'F')
+    binario_colorido = (binario_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                        ('V', f'{cor['verde']}1{cor['limpa']}'))
     # Retornando ao usuário o valor convertido em decimal
-    print(f'VALOR BINÁRIO: {binario}\n'
-          f'VALOR INTEIRO: {decimal}')
+    print(f'{cor['verde']}VALOR BINÁRIO{cor['limpa']}: {binario_colorido}\n'
+          f'{cor['verde']}VALOR INTEIRO{cor['limpa']}{cor['branco']}: {decimal}{cor['limpa']}')
 elif escolhido == 3:
     # Titulo
-    print('-' * 25)
-    print(f'{'SOMANDO NÚMEROS ':^25}\n'
-          f'{'BINÁRIOS':^25}')
-    print('-' * 25)
+    titulo = f'SOMANDO NÚMEROS'
+    titulo2 = f'BINÁRIOS'
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
+    print(f'{cor['ciano']}{titulo:^25}\n'
+          f'{titulo2:^25}{cor['limpa']}')
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
     #Pedindo ao usuário para escolher uma das opções.
-    print('ESCOLHA UMA DAS OPÇÕES ABAIXO:')
-    print('[ 1 ] ADIÇÃO')
-    print('[ 2 ] SUBTRAÇÃO')
+    print(f'{cor['amarelo']}ESCOLHA UMA DAS OPÇÕES ABAIXO:{cor['limpa']}')
+    print(f'{cor['verde']}[ 1 ]{cor['limpa']} {cor['branco']}ADIÇÃO{cor['limpa']}')
+    print(f'{cor['verde']}[ 2 ]{cor['limpa']} {cor['branco']}SUBTRAÇÃO{cor['limpa']}')
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
     # Lendo a opção que o usuário escolheu.
-    escolha = int(input('Digite o valor: '))
+    escolha = int(input(f'{cor['roxo']}DIGITE A OPÇÃO: {cor['limpa']}'))
+    print(f'{cor['branco']}-{cor['limpa']}' * 25)
     # Adição
     if escolha == 1:
-         print('QUANTAS PARCELAS DESEJA:')
-         print('DIGITE [1] PARA DUAS PARCELAS')
-         print('DIGITE [2] PARA TRÊS PARCELAS')
-         print('DIGITE [3] PARA QUATRO PARCELAS')
-         num = int(input('Digite aqui: '))
-         if num == 1:
-            print(f'CERTO. VAMOS REALIZAR A OPERAÇÃO.')
-            n1_str = input('Primeiro valor binario: ') # Lendo o valor binário que o usuário escolheu
-            n2_str = input('Segundo valor binario: ')
-            n1_dec = int(n1_str, 2) # Transformando este valor de str para um valor inteiro
-            n2_dec = int(n2_str, 2)
-            somar_dec = n1_dec + n2_dec # Somando o valores convertidos para inteiros
-            result_bin = bin(somar_dec) # Resultado dos valores inteiros em binários
-            print('PROCESSANDO...')
-            sleep(3)
-            print('RESULTADO')
-            print(f'A soma entre {n1_str} + {n2_str} é = {result_bin[2:]}')
-         elif num == 2:
-            print(f'CERTO. VAMOS REALIZAR AS OPERAÇÕES.')
-            n1_str = input('Primeiro valor binário: ')
-            n2_str = input('Segundo valor binário: ')
-            n3_str = input('Terceiro valor binário: ')
-            n1_dec = int(n1_str, 2)
-            n2_dec = int(n2_str, 2)
-            n3_dec = int(n3_str, 2)
-            somar_dec = n1_dec + n2_dec + n3_dec
-            result_bin = bin(somar_dec)
-            print('PROCESSANDO...')
-            sleep(3)
-            print('RESULTADO')
-            print(f'A soma entre {n1_str} + {n2_str} + {n3_str} é = {result_bin[2:]}')
-         elif num == 3:
-            print(f'CERTO. VAMOS REALIZAR AS OPERAÇÕES.')
-            n1_str = input('Primeiro valor binário: ')
-            n2_str = input('Segundo valor binário: ')
-            n3_str = input('Terceiro valor binário: ')
-            n4_str = input('Quarto valor binário: ')
-            n1_dec = int(n1_str, 2)
-            n2_dec = int(n2_str, 2)
-            n3_dec = int(n3_str, 2)
-            n4_dec = int(n4_str, 2)
-            soma_dec = n1_dec + n2_dec + n3_dec + n4_dec
-            result_bin = bin(soma_dec)
-            print('PROCESANDO...')
-            sleep(3)
-            print('RESULTADO')
-            print(f'A soma entre {n1_str} + {n2_str} + {n3_str} + {n4_str} é = {result_bin[2:]}')
-         else:
-             print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
-    else:
-        print(f'OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.')
-    # Subtração
-    if escolha == 2:
-        print('QUANTAS PARCELAS DESEJA:')
-        print('DIGITE [1] PARA DUAS PARCELAS')
-        print('DIGITE [2] PARA TRÊS PARCELAS')
-        print('DIGITE [3] PARA QUATRO PARCELAS')
-        num = int(input('Digite aqui: '))
-        if num == 1:
-            print(f'CERTO. VAMOS REALIZAR A OPERAÇÃO.')
-            n1_str = input('Primeiro valor binario: ') # Lendo o valor binário que o usuário escolheu
-            n2_str = input('Segundo valor binario: ')
-            n1_dec = int(n1_str, 2) # Transformando este valor de str para um valor inteiro
-            n2_dec = int(n2_str, 2)
-            somar_dec = n1_dec - n2_dec # Subtraindo o valores convertidos para inteiros
-            result_bin = bin(somar_dec) # Resultado dos valores inteiros em binários
-            print('PROCESSANDO...')
-            sleep(3)
-            print('RESULTADO')
-            if n1_str < n2_str:
-                result_format = f'{result_bin[0] + result_bin[3:]}'
-                print(f'A subtração entre {n1_str} - {n2_str} é = {result_format}')
+            print(f'{cor['amarelo']}QUANTAS PARCELAS DESEJA:{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[1]{cor['limpa']} '
+               f'{cor['branco']}PARA DUAS PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[2]{cor['limpa']} '
+               f'{cor['branco']}PARA TRÊS PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[3]{cor['limpa']} '
+                  f'{cor['branco']}PARA QUATRO PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}-{cor['limpa']}' * 25)
+            num = int(input(f'{cor['roxo']}DIGITE AQUI: {cor['limpa']}'))
+            print(f'{cor['branco']}-{cor['limpa']}' * 25)
+            if num == 1:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR A OPERAÇÃO.{cor['limpa']}')
+                # Lendo o valor binário que o usuário escolheu
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2) # Transformando este valor de str para um valor inteiro
+                n2_dec = int(n2_str, 2)
+                somar_dec = n1_dec + n2_dec # Somando o valores convertidos para inteiros
+                result_bin = bin(somar_dec) # Resultado dos valores inteiros em binários
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = (result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                print(f'{cor['branco']}A soma entre{cor['limpa']} {n1_colorido} {cor['branco']}+{cor['limpa']} '
+                  f'{n2_colorido} {cor['branco']}é ={cor['limpa']} {result_colorido}')
+            elif num == 2:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR AS OPERAÇÕES.{cor['limpa']}')
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n3_str = input(f'{cor['branco']}Terceira Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2)
+                n2_dec = int(n2_str, 2)
+                n3_dec = int(n3_str, 2)
+                somar_dec = n1_dec + n2_dec + n3_dec
+                result_bin = bin(somar_dec)
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n3_str = n3_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                           ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                           ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n3_colorido = (n3_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                           ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = (result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                print(f'{cor['branco']}A soma entre{cor['limpa']} {n1_colorido} {cor['branco']}+{cor['limpa']} '
+                  f'{n2_colorido} {cor['branco']}+{cor['limpa']} {n3_colorido} '
+                  f'{cor['branco']}é ={cor['limpa']} {result_colorido}')
+            elif num == 3:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR AS OPERAÇÕES.{cor['limpa']}')
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n3_str = input(f'{cor['branco']}Terceira Parcela: {cor['limpa']}')
+                n4_str = input(f'{cor['branco']}Quarta Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2)
+                n2_dec = int(n2_str, 2)
+                n3_dec = int(n3_str, 2)
+                n4_dec = int(n4_str, 2)
+                soma_dec = n1_dec + n2_dec + n3_dec + n4_dec
+                result_bin = bin(soma_dec)
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n3_str = n3_str.replace('1', 'V').replace('0', 'F')
+                n4_str = n4_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n3_colorido = (n3_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n4_colorido = (n4_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = (result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                   ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                print(f'{cor['branco']}A soma entre{cor['limpa']} {n1_colorido} {cor['branco']}+{cor['limpa']} '
+                      f'{n2_colorido} {cor['branco']}+{cor['limpa']} {n3_colorido} '
+                      f'{cor['branco']}+{cor['limpa']} {n4_colorido}{cor['branco']} é ={cor['limpa']} {result_colorido}')
             else:
-                print(f'A subtração entre {n1_str} - {n2_str} é = {result_bin[2:]}')
-        elif num == 2:
-            print(f'CERTO. VAMOS REALIZAR AS OPERAÇÕES.')
-            n1_str = input('Primeiro valor binário: ')
-            n2_str = input('Segundo valor binário: ')
-            n3_str = input('Terceiro valor binário: ')
-            n1_dec = int(n1_str, 2)
-            n2_dec = int(n2_str, 2)
-            n3_dec = int(n3_str, 2)
-            somar_dec = n1_dec - n2_dec - n3_dec
-            result_bin = bin(somar_dec)
-            result_format = f'{result_bin[0] + result_bin[3:]}'
-            print('PROCESSANDO...')
-            sleep(3)
-            print('RESULTADO')
-            print(f'A subtração entre {n1_str} - {n2_str} - {n3_str} é = {result_format}')
-        elif num == 3:
-            print(f'CERTO. VAMOS REALIZAR AS OPERAÇÕES.')
-            n1_str = input('Primeiro valor binário: ')
-            n2_str = input('Segundo valor binário: ')
-            n3_str = input('Terceiro valor binário: ')
-            n4_str = input('Quarto valor binário: ')
-            n1_dec = int(n1_str, 2)
-            n2_dec = int(n2_str, 2)
-            n3_dec = int(n3_str, 2)
-            n4_dec = int(n4_str, 2)
-            soma_dec = n1_dec - n2_dec - n3_dec - n4_dec
-            result_bin = bin(soma_dec)
-            result_format = f'{result_bin[0] + result_bin[3:]}'
-            print('PROCESANDO...')
-            sleep(3)
-            print('RESULTADO')
-            print(f'A subtração entre {n1_str} - {n2_str} - {n3_str} - {n4_str} é = {result_format}')
-        else:
-            print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
-elif escolhido == 4:
-    print('QUANTAS PROPOSIÇÕES DESEJA?')
-    print('[ 1 ] PARA UMA PROPOSIÇÃO: ["a"]')
-    print('[ 2 ] PARA DUAS PROPOSIÇÕES: ["a","b"]')
-    print('[ 3 ] PARA TÊS PROPOSIÇÕES: ["a","b", "c"]')
-    print('[ 4 ] PARA QUATRO PROPOSIÇÕES: ["a","b", "c", "d"]')
-    escolha = int(input('Digite aqui: '))
-    if escolha == 1:
-        tabela = ttg.Truths(['a'], ascending=True)
-        tabela_str = str(tabela)
-        tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-        tabela_colorida = ((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
-                      ('V', f'{cor['verde']}1{cor['limpa']}')).replace
-                      ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
-                      ('+', f'{cor['amarelo']}+{cor['limpa']}')). replace
-                      ('-', f'{cor['ciano']}-{cor['limpa']}'))
-        print(tabela_colorida)
-    elif escolha == 2:
-        print(ttg.Truths(['a','b'], ascending=True))
-    elif escolha == 3:
-        print(ttg. Truths(['a', 'b', 'c'], ascending=True))
-    elif escolha == 4:
-        print(ttg.Truths(['a', 'b', 'c', 'd'], ascending=True))
+                 print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
+        # Subtração
+    if escolha == 2:
+            print(f'{cor['amarelo']}QUANTAS PARCELAS DESEJA:{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[1]{cor['limpa']} '
+                  f'{cor['branco']}PARA DUAS PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[2]{cor['limpa']} '
+                  f'{cor['branco']}PARA TRÊS PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[3]{cor['limpa']} '
+                  f'{cor['branco']}PARA QUATRO PARCELAS{cor['limpa']}')
+            print(f'{cor['branco']}-{cor['limpa']}' * 25)
+            num = int(input(f'{cor['roxo']}DIGITE AQUI: {cor['limpa']}'))
+            print(f'{cor['branco']}-{cor['limpa']}' * 25)
+            if num == 1:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR A OPERAÇÃO.{cor['limpa']}')
+                # Lendo o valor binário que o usuário escolheu
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2) # Transformando este valor de str para um valor inteiro
+                n2_dec = int(n2_str, 2)
+                somar_dec = n1_dec - n2_dec # Subtraindo o valores convertidos para inteiros
+                result_bin = bin(somar_dec) # Resultado dos valores inteiros em binários
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = (result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                   ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                if somar_dec > 0:
+                    result_format = f'{result_bin[0] + result_bin[3:]}'
+                    result_str = str(result_format)
+                    result_str = result_str.replace('1', 'V').replace('0', 'F')
+                    result_colorido1 = ((result_str.replace('-', f'{cor['vermelho']}-{cor['limpa']}').replace
+                                       ('F', f'{cor['vermelho']}0{cor['limpa']}')).replace
+                                       ('V', f'{cor['verde']}1{cor['limpa']}'))
+                    print(f'A subtração entre {n1_colorido} - {n2_colorido} é = {result_colorido1}')
+                else:
+                    print(f'A subtração entre {n1_colorido} - {n2_colorido} é = {result_colorido}')
+            elif num == 2:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR AS OPERAÇÕES.{cor['limpa']}')
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n3_str = input(f'{cor['branco']}Terceira Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2)
+                n2_dec = int(n2_str, 2)
+                n3_dec = int(n3_str, 2)
+                somar_dec = n1_dec - n2_dec - n3_dec
+                somar_str = str(somar_dec)
+                result_bin = bin(somar_dec)
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n3_str = n3_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n3_colorido = (n3_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = ((result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}')).replace
+                                       ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                if somar_dec < 0:
+                    result_format = f'{result_bin[0] + result_bin[3:]}'
+                    result_str = str(result_format)
+                    result_str = result_str.replace('1', 'V').replace('0', 'F')
+                    result_colorido1 = ((result_str.replace('-', f'{cor['vermelho']}-{cor['limpa']}').replace
+                                         ('F', f'{cor['vermelho']}0{cor['limpa']}')).replace
+                                        ('V', f'{cor['verde']}1{cor['limpa']}'))
+                    print(f'A subtração entre {n1_colorido} - {n2_colorido} - {n3_colorido} é = {result_colorido1}')
+                else:
+                    print(f'A subtração entr {n1_colorido} - {n2_colorido} - {n3_colorido} é = {result_colorido}')
+            elif num == 3:
+                print(f'{cor['verde']}CERTO. VAMOS REALIZAR AS OPERAÇÕES.{cor['limpa']}')
+                n1_str = input(f'{cor['branco']}Primeira Parcela: {cor['limpa']}')
+                n2_str = input(f'{cor['branco']}Segunda Parcela: {cor['limpa']}')
+                n3_str = input(f'{cor['branco']}Terceira Parcela: {cor['limpa']}')
+                n4_str = input(f'{cor['branco']}Terceira Parcela: {cor['limpa']}')
+                n1_dec = int(n1_str, 2)
+                n2_dec = int(n2_str, 2)
+                n3_dec = int(n3_str, 2)
+                n4_dec = int(n4_str, 2)
+                somar_dec = n1_dec - n2_dec - n3_dec - n4_dec
+                result_bin = bin(somar_dec)
+                result_str = str(result_bin[2:])
+                result_str = result_str.replace('1', 'V').replace('0', 'F')
+                n1_str = n1_str.replace('1', 'V').replace('0', 'F')
+                n2_str = n2_str.replace('1', 'V').replace('0', 'F')
+                n3_str = n3_str.replace('1', 'V').replace('0', 'F')
+                n4_str = n4_str.replace('1', 'V').replace('0', 'F')
+                n1_colorido = (n1_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n2_colorido = (n2_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n3_colorido = (n3_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                n4_colorido = (n4_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                               ('V', f'{cor['verde']}1{cor['limpa']}'))
+                result_colorido = ((result_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}')).replace
+                                   ('V', f'{cor['verde']}1{cor['limpa']}'))
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                processando = 'PROCESSANDO...'
+                print(f'{cor['roxo']}{processando:^25}{cor['limpa']}')
+                print(f'{cor['branco']}-{cor['limpa']}' * 25)
+                sleep(3)
+                print(f'{cor['verde']}RESULTADO{cor['limpa']}')
+                if somar_dec < 0:
+                    result_format = f'{result_bin[0] + result_bin[3:]}'
+                    result_str = str(result_format)
+                    result_str = result_str.replace('1', 'V').replace('0', 'F')
+                    result_colorido1 = ((result_str.replace('-', f'{cor['vermelho']}-{cor['limpa']}').replace
+                                         ('F', f'{cor['vermelho']}0{cor['limpa']}')).replace
+                                        ('V', f'{cor['verde']}1{cor['limpa']}'))
+                    print(f'A subtração entre {n1_colorido} - {n2_colorido} - {n3_colorido} - {n4_colorido} '
+                          f'é = {result_colorido1}')
+                else:
+                    print(f'A subtração entre {n1_colorido} - {n2_colorido} - {n3_colorido} - {n4_colorido} '
+                          f'é = {result_colorido}')
+            else:
+                print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
     else:
         print(f'OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.')
+elif escolhido == 4:
+        print('QUANTAS PROPOSIÇÕES DESEJA?')
+        print('[ 1 ] PARA UMA PROPOSIÇÃO: ["a"]')
+        print('[ 2 ] PARA DUAS PROPOSIÇÕES: ["a","b"]')
+        print('[ 3 ] PARA TÊS PROPOSIÇÕES: ["a","b", "c"]')
+        print('[ 4 ] PARA QUATRO PROPOSIÇÕES: ["a","b", "c", "d"]')
+        escolha = int(input('Digite aqui: '))
+        if escolha == 1:
+            tabela = ttg.Truths(['a'], ascending=True)
+            tabela_str = str(tabela)
+            tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+            tabela_colorida = (((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                          ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                          ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                          ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                          ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                          ('a', f'{cor['branco']}a{cor['limpa']}'))
+            print(tabela_colorida)
+        elif escolha == 2:
+            tabela = ttg.Truths(['a', 'b'], ascending=True)
+            tabela_str = str(tabela)
+            tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+            tabela_colorida = (((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                            ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                            ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                            ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                            ('-', f'{cor['ciano']}-{cor['limpa']}'))).replace
+                            ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                            ('b', f'{cor['branco']}b{cor['limpa']}'))
+            print(tabela_colorida)
+        elif escolha == 3:
+            tabela = ttg. Truths(['a', 'b', 'c'], ascending=True)
+            tabela_str = str(tabela)
+            tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+            tabela_colorida = (((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                            ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                            ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                            ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                            ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                            ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                            ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                            ('c', f'{cor['branco']}c{cor['limpa']}'))
+            print(tabela_colorida)
+        elif escolha == 4:
+            tabela = ttg.Truths(['a', 'b', 'c', 'd'], ascending=True)
+            tabela_str = str(tabela)
+            tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+            tabela_colorida = ((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                            ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                            ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                            ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                            ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                            ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                            ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                            ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                            ('d', f'{cor['branco']}d{cor['limpa']}'))
+            print(tabela_colorida)
+        else:
+            print(f'OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.')
 
 elif escolhido == 5:
-    valor1 = input('Primeira proposição: ')
-    valor2 = input('Segunda proposição: ')
-    funcao = input('Qual o operador? ')
-    neg = input('Esta negativado? ').upper().strip()
-    tabela = input('ATÉ QUE PROPOSIÇÃO DESEJA IR? ').lower()
-    if neg == 'SIM':
-        print('O QUE ESTA NEGATIVADO?')
-        print(f'OPÇÃO [1]: "{valor1}"')
-        print(f'OPÇÃO [2]: "{valor2}"')
-        print(f'OPÇÃO [3]: "{valor1} {funcao} {valor2}"')
-        escolha = int(input('Digite a opção: '))
-        if escolha == 1 and tabela == 'b':
-            tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'], ascending=True)
-            print(tabela)
-        elif escolha == 2 and tabela == 'b':
-            tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} (not {valor2})'],
-                                ascending=True)
-            print(tabela)
-        elif escolha == 3 and tabela == 'b':
-            tabela = ttg.Truths(['a', 'b'], [f'not ({valor1} {funcao} {valor2})'],
-                                ascending=True)
-            print(tabela)
-        if escolha == 1 and tabela == 'c':
-            tabela = ttg.Truths(['a', 'b', 'c'], [f'(not {valor1}) {funcao} {valor2}'],
-                                ascending=True)
-            print(tabela)
-        elif escolha == 2 and tabela == 'c':
-            tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} (not {valor2})'],
-                                ascending=True)
-            print(tabela)
-        elif escolha == 3 and tabela == 'c':
-            tabela = ttg.Truths(['a', 'b', 'c'], [f'not ({valor1} {funcao} {valor2})'],
-                                ascending=True)
-            print(tabela)
-        if escolha == 1 and tabela == 'd':
-            tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'(not {valor1}) {funcao} {valor2}'],
-                                ascending=True)
-            print(tabela)
-        elif escolha == 2 and tabela == 'd':
-            tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} (not {valor2})'],
-                                ascending=True)
-            print(tabela)
-        elif escolha == 3 and tabela == 'd':
-            tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'not ({valor1} {funcao} {valor2})'],
-                                ascending=True)
-            print(tabela)
+        titulo = 'EXPRESSÇÕES BOOLEANAS'
+        print(f'{cor['branco']}-{cor['limpa']}' * 25)
+        valor1 = input('Primeira proposição: ')
+        valor2 = input('Segunda proposição: ')
+        funcao = input('Qual o operador? ')
+        if funcao == 'and' or funcao == 'or':
+            neg = input('Esta negativado? ').upper().strip()
+            tabela = input('ATÉ QUE PROPOSIÇÃO DESEJA IR? ').lower()
+            if neg == 'SIM':
+                print('O QUE ESTA NEGATIVADO?')
+                print(f'OPÇÃO [1]: "{valor1}"')
+                print(f'OPÇÃO [2]: "{valor2}"')
+                print(f'OPÇÃO [3]: "{valor1} {funcao} {valor2}"')
+                escolha = int(input('Digite a opção: '))
+                if escolha == 1 and tabela == 'b':
+                    tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'], ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 2 and tabela == 'b':
+                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} (not {valor2})'],ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 3 and tabela == 'b':
+                    tabela = ttg.Truths(['a', 'b'], [f'not ({valor1} {funcao} {valor2})'],  ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 1 and tabela == 'c':
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'(not {valor1}) {funcao} {valor2}'],ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 2 and tabela == 'c':
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} (not {valor2})'],ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = ((((((((((((tabela_str.replace('F',
+                                                                     f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 3 and tabela == 'c':
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'not ({valor1} {funcao} {valor2})'],
+                                        ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('not', f'{cor['branco']}not{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 1 and tabela == 'd':
+                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'(not {valor1}) {funcao} {valor2}'],
+                                    ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('d', f'{cor['branco']}d{cor['limpa']}')).replace
+                                ('ot', f'{cor['branco']}ot{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('n', f'{cor['branco']}n{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 2 and tabela == 'd':
+                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} (not {valor2})'],
+                                    ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('d', f'{cor['branco']}d{cor['limpa']}')).replace
+                                ('ot', f'{cor['branco']}ot{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('n', f'{cor['branco']}n{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif escolha == 3 and tabela == 'd':
+                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'not ({valor1} {funcao} {valor2})'],
+                                    ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('d', f'{cor['branco']}d{cor['limpa']}')).replace
+                                ('ot', f'{cor['branco']}ot{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('n', f'{cor['branco']}n{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                else:
+                    print(f'{cor['vermelho']}OPÇÃO {tabela} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
+            else:
+                if tabela == 'b':
+                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} {valor2}'], ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = ((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif tabela == 'c':
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} {valor2}'],ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('nd', f'{cor['branco']}nd{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                elif tabela == 'd':
+                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} {valor2}'],ascending=True)
+                    tabela_str = str(tabela)
+                    tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
+                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                                ('V', f'{cor['verde']}1{cor['limpa']}')).replace
+                                ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
+                                ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
+                                ('-', f'{cor['ciano']}-{cor['limpa']}')).replace
+                                ('a', f'{cor['branco']}a{cor['limpa']}')).replace
+                                ('b', f'{cor['branco']}b{cor['limpa']}')).replace
+                                ('c', f'{cor['branco']}c{cor['limpa']}')).replace
+                                ('d', f'{cor['branco']}d{cor['limpa']}')).replace
+                                ('or', f'{cor['branco']}or{cor['limpa']}')).replace
+                                ('n', f'{cor['branco']}n{cor['limpa']}')).replace
+                                ('(', f'{cor['branco']}({cor['limpa']}')).replace
+                                (')', f'{cor['branco']}){cor['limpa']}'))
+                    print(tabela_colorida)
+                else:
+                    print(f'{cor['vermelho']}OPÇÃO {tabela} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
         else:
-            print(f'OPÇÃO {tabela} INVÁLIDA. TENTE NOVAMENTE.')
-    else:
-        if tabela == 'b':
-            tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} {valor2}'], ascending=True)
-            print(tabela)
-        elif tabela == 'c':
-            tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} {valor2}'],
-                                ascending=True)
-            print(tabela)
-        elif tabela == 'd':
-            tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} {valor2}'],
-                                ascending=True)
-            print(tabela)
-        else:
-            print(f'OPÇÃO {tabela} INVÁLIDA. TENTE NOVAMENTE.')
+            print(f'{cor['vermelho']}OPÇÃO {funcao} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
 else:
-    print(f'OPÇÃO {escolhido} INVÁLIDA. TENTE NOVAMENTE.')
+    print(f'{cor['vermelho']}OPÇÃO {escolhido} {cor['vermelho']}INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
