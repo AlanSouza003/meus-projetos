@@ -8,8 +8,8 @@ print(f'{cor['ciano']}{'NÚMEROS BINÁRIOS':^25}{cor['limpa']}')
 print(f'{cor['branco']}-={cor['limpa']}' * 12)
 # Pedindo para o usuário escolher umas das opções
 print(f'''{cor['amarelo']}ESCOLHA A OPÇÃO DESEJADA:{cor['limpa']}
-{cor['verde']}[ 1 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE BINÁRIOS PARA DÉCIMAL{cor['limpa']}
-{cor['verde']}[ 2 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE DÉCIMAL PARA BINÁRIO{cor['limpa']}
+{cor['verde']}[ 1 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE DÉCIMAL PARA BINÁRIO{cor['limpa']}
+{cor['verde']}[ 2 ]{cor['limpa']} {cor['branco']}CONVERSÃO DE BINÁRIO PARA DÉCIMAL{cor['limpa']}
 {cor['verde']}[ 3 ]{cor['limpa']} {cor['branco']}SOMANDO NÚMEROS BINÁRIOS{cor['limpa']}
 {cor['verde']}[ 4 ]{cor['limpa']} {cor['branco']}VISUALIZAR A TABELA VERDADE{cor['limpa']}
 {cor['verde']}[ 5 ]{cor['limpa']} {cor['branco']}REALIZAR CALCULOS EXPRESSÕES BOOLEANAS{cor['limpa']}''')
@@ -176,9 +176,9 @@ elif escolhido == 3:
                       f'{n2_colorido} {cor['branco']}+{cor['limpa']} {n3_colorido} '
                       f'{cor['branco']}+{cor['limpa']} {n4_colorido}{cor['branco']} é ={cor['limpa']} {result_colorido}')
             else:
-                 print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
+                 print(f'{cor['vermelho']}OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
         # Subtração
-    if escolha == 2:
+    elif escolha == 2:
             print(f'{cor['amarelo']}QUANTAS PARCELAS DESEJA:{cor['limpa']}')
             print(f'{cor['branco']}DIGITE{cor['limpa']} {cor['verde']}[1]{cor['limpa']} '
                   f'{cor['branco']}PARA DUAS PARCELAS{cor['limpa']}')
@@ -311,16 +311,18 @@ elif escolhido == 3:
                     print(f'A subtração entre {n1_colorido} - {n2_colorido} - {n3_colorido} - {n4_colorido} '
                           f'é = {result_colorido}')
             else:
-                print(f'OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.')
+                print(f'{cor['vermelho']}OPÇÃO {num} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
     else:
-        print(f'OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.')
+        print(f'{cor['vermelho']}OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
 elif escolhido == 4:
-        print('QUANTAS PROPOSIÇÕES DESEJA?')
-        print('[ 1 ] PARA UMA PROPOSIÇÃO: ["a"]')
-        print('[ 2 ] PARA DUAS PROPOSIÇÕES: ["a","b"]')
-        print('[ 3 ] PARA TÊS PROPOSIÇÕES: ["a","b", "c"]')
-        print('[ 4 ] PARA QUATRO PROPOSIÇÕES: ["a","b", "c", "d"]')
-        escolha = int(input('Digite aqui: '))
+        print(f'{cor['branco']}-{cor['limpa']}' * 25)
+        print(f'{cor['amarelo']}QUANTAS PROPOSIÇÕES DESEJA?{cor['limpa']}')
+        print(f'{cor['verde']}[ 1 ]{cor['limpa']} {cor['branco']}PARA UMA PROPOSIÇÃO: ["a"]{cor['limpa']}')
+        print(f'{cor['verde']}[ 2 ]{cor['limpa']} {cor['branco']}PARA DUAS PROPOSIÇÃO: ["a", "b"]{cor['limpa']}')
+        print(f'{cor['verde']}[ 3 ]{cor['limpa']} {cor['branco']}PARA TRÊS PROPOSIÇÃO: ["a","b","c"]{cor['limpa']}')
+        print(f'{cor['verde']}[ 4 ]{cor['limpa']} {cor['branco']}PARA QUATRO PROPOSIÇÃO: '
+              f'["a","b","c","d"]{cor['limpa']}')
+        escolha = int(input(f'{cor['roxo']}DIGITE AQUI: {cor['limpa']}'))
         if escolha == 1:
             tabela = ttg.Truths(['a'], ascending=True)
             tabela_str = str(tabela)
@@ -372,7 +374,7 @@ elif escolhido == 4:
                             ('d', f'{cor['branco']}d{cor['limpa']}'))
             print(tabela_colorida)
         else:
-            print(f'OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.')
+            print(f'{cor['vermelho']}OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
 
 elif escolhido == 5:
         titulo = 'EXPRESSÇÕES BOOLEANAS'
@@ -396,7 +398,7 @@ elif escolhido == 5:
                 print(f'{cor['branco']}OPÇÃO{cor ['limpa']} {cor['verde']}[3]{cor['limpa']}'
                       f'{cor['branco']}: "{cor['limpa']}{cor['vermelho']}'
                       f'not ({valor1} {funcao} {valor2}){cor['limpa']}{cor['branco']}"{cor['limpa']}')
-                escolha = int(input(f'DIGITE A OPÇÃO: '))
+                escolha = int(input(f'{cor['roxo']}DIGITE A OPÇÃO: {cor['limpa']}'))
                 if escolha == 1 and tabela == 'b':
                     tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'], ascending=True)
                     tabela_str = str(tabela)
