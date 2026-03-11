@@ -214,7 +214,7 @@ elif escolhido == 3:
                 print(f'{cor['branco']}-{cor['limpa']}' * 25)
                 sleep(3)
                 print(f'{cor['verde']}RESULTADO{cor['limpa']}')
-                if somar_dec > 0:
+                if somar_dec < 0:
                     result_format = f'{result_bin[0] + result_bin[3:]}'
                     result_str = str(result_format)
                     result_str = result_str.replace('1', 'V').replace('0', 'F')
