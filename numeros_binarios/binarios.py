@@ -377,7 +377,7 @@ elif escolhido == 4:
             print(f'{cor['vermelho']}OPÇÃO {escolha} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
 
 elif escolhido == 5:
-        titulo = 'EXPRESSÇÕES BOOLEANAS'
+        titulo = 'EXPRESSÕES BOOLEANAS'
         print(f'{cor['branco']}-{cor['limpa']}' * 25)
         print(f'{cor['ciano']}{titulo:^25}{cor['limpa']}')
         print(f'{cor['branco']}-{cor['limpa']}' * 25)
@@ -400,10 +400,12 @@ elif escolhido == 5:
                       f'not ({valor1} {funcao} {valor2}){cor['limpa']}{cor['branco']}"{cor['limpa']}')
                 escolha = int(input(f'{cor['roxo']}DIGITE A OPÇÃO: {cor['limpa']}'))
                 if escolha == 1 and tabela == 'b':
-                    tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'], ascending=True)
+                    tabela = ttg.Truths(['a', 'b'], [f'(not {valor1}) {funcao} {valor2}'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -417,10 +419,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif escolha == 2 and tabela == 'b':
-                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} (not {valor2})'],ascending=True)
+                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} (not {valor2})'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -434,10 +438,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif escolha == 3 and tabela == 'b':
-                    tabela = ttg.Truths(['a', 'b'], [f'not ({valor1} {funcao} {valor2})'],  ascending=True)
+                    tabela = ttg.Truths(['a', 'b'], [f'not ({valor1} {funcao} {valor2})'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -451,10 +457,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif escolha == 1 and tabela == 'c':
-                    tabela = ttg.Truths(['a', 'b', 'c'], [f'(not {valor1}) {funcao} {valor2}'],ascending=True)
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'(not {valor1}) {funcao} {valor2}'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = ((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -469,11 +477,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif escolha == 2 and tabela == 'c':
-                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} (not {valor2})'],ascending=True)
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} (not {valor2})'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = ((((((((((((tabela_str.replace('F',
-                                                                     f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = ((((((((((((tabela_str.replace
+                                ('F',f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -492,7 +501,8 @@ elif escolhido == 5:
                                         ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = ((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -511,7 +521,8 @@ elif escolhido == 5:
                                     ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -531,7 +542,8 @@ elif escolhido == 5:
                                     ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -551,7 +563,8 @@ elif escolhido == 5:
                                     ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -570,10 +583,12 @@ elif escolhido == 5:
                     print(f'{cor['vermelho']}OPÇÃO {tabela} INVÁLIDA. TENTE NOVAMENTE.{cor['limpa']}')
             else:
                 if tabela == 'b':
-                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} {valor2}'], ascending=True)
+                    tabela = ttg.Truths(['a', 'b'], [f'{valor1} {funcao} {valor2}'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = ((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = ((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -586,10 +601,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif tabela == 'c':
-                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} {valor2}'],ascending=True)
+                    tabela = ttg.Truths(['a', 'b', 'c'], [f'{valor1} {funcao} {valor2}'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = (((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = (((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
@@ -603,10 +620,12 @@ elif escolhido == 5:
                                 (')', f'{cor['branco']}){cor['limpa']}'))
                     print(tabela_colorida)
                 elif tabela == 'd':
-                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} {valor2}'],ascending=True)
+                    tabela = ttg.Truths(['a', 'b', 'c', 'd'], [f'{valor1} {funcao} {valor2}'],
+                                        ascending=True)
                     tabela_str = str(tabela)
                     tabela_str = tabela_str.replace('1', 'V').replace('0', 'F')
-                    tabela_colorida = ((((((((((((tabela_str.replace('F', f'{cor['vermelho']}0{cor['limpa']}').replace
+                    tabela_colorida = ((((((((((((tabela_str.replace
+                                ('F', f'{cor['vermelho']}0{cor['limpa']}').replace
                                 ('V', f'{cor['verde']}1{cor['limpa']}')).replace
                                 ('|', f'{cor['amarelo']}|{cor['limpa']}')).replace
                                 ('+', f'{cor['amarelo']}+{cor['limpa']}')).replace
