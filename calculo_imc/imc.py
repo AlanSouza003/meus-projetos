@@ -1,12 +1,12 @@
 from time import sleep
 
-from orca.messages import percentage
+from reportlab.lib.colors import lime
 
 # Tabela de cores
 
 cor = {'limpa':'\033[0m', 'amarelo':'\033[1;93m', 'ciano':'\033[1;96m',
         'branco':'\033[1;97m', 'roxo':'\033[1;95m', 'vermelho':'\033[1;91m',
-        'verde':'\033[1;92m'}
+        'verde':'\033[1;92m' ,'azul':'\033[1;94m'}
 
 # Variáveis de controle
 
@@ -31,6 +31,7 @@ imc_maior = 0
 imc_maior_str = ''
 imc_menor = 0
 imc_menor_str = ''
+imc_individual = 0
 media_imc = 0
 media_format = ''
 cont_grup = 0
@@ -39,9 +40,11 @@ cont_femi = 0
 cont_pesoideal = 0
 cont_sobrepeso = 0
 cont_obesidade = 0
+cont_abaixop = 0
 porcent_pesoideal = 0
 porcent_sobrepeso = 0
 porcent_obesidade = 0
+porcent_abaixop = 0
 
 # Titulo
 
@@ -54,68 +57,71 @@ print(f'{cor['branco']}-={cor['limpa']}'*11)
 for p in range(1, 5):
 
     print(f'{cor['roxo']}====== {p}º PESSOA ======{cor['limpa']}')
-    # nome = input(f'{cor['branco']}Digite seu nome: {cor['limpa']}')
-    # idade = int(input(f'{cor['branco']}Digite sua idade: {cor['limpa']}'))
-    # sexo = str(input('Sexo [M/F]: ')).upper()
-    peso_input = input(f'{cor['branco']}Informe o peso: {cor["limpa"]}')
+    nome = input(f'{cor['branco']}DIGITE SEU NOME: {cor['limpa']}')
+    idade = int(input(f'{cor['branco']}DIGITE SUA IDADE: {cor['limpa']}'))
+    sexo = str(input(f'{cor['branco']}SEXO [M/F]: {cor['limpa']}')).upper()
+    peso_input = input(f'{cor['branco']}INFORME SEU PESO: {cor["limpa"]}')
     peso = float(peso_input.replace(',','.'))
-    altura_input = input(f'{cor['branco']}Informe a altura: {cor['limpa']}')
+    altura_input = input(f'{cor['branco']}INFORME SUA ALTURA: {cor['limpa']}')
     altura = float(altura_input.replace(',','.'))
     imc = peso / (altura ** 2) # Calculando o IMC
     media_imc += imc / 4 # Calculando a média do grupo
     media_format = f'{media_imc:.2f}'
+    imc_individual = imc
     peso_format = peso_input
     altura_format = altura_input
     cont_grup += 1
+    print(f'{cor['azul']}IMC DO {p}º USUÁRIO{cor['limpa']}{cor['branco']}: {imc:.2f}{cor['limpa']}')
 
     # Estrutura condicional composta para saber o maior IMC.
 
-    # if p == 1:
-    #     imc_maior = imc
-    #     nome_maior = nome
-    #     idade_maior = idade
-    #     altura_maior = altura
-    #     peso_maior = peso
-    # else:
-    #     if imc > imc_maior:
-    #         imc_maior = imc
-    #         nome_maior = nome
-    #         idade_maior = idade
-    #         altura_maior = altura
-    #         peso_maior = peso
+    if p == 1:
+        imc_maior = imc
+        nome_maior = nome
+        idade_maior = idade
+        altura_maior = altura
+        peso_maior = peso
+    else:
+        if imc > imc_maior:
+            imc_maior = imc
+            nome_maior = nome
+            idade_maior = idade
+            altura_maior = altura
+            peso_maior = peso
 
     # Estrutura condicional composta para saber o menor IMC.
 
-    # if p == 1:
-    #     imc_menor = imc
-    #     nome_menor = nome
-    #     idade_menor = idade
-    #     altura_menor = altura
-    #     peso_menor = peso
-    # else:
-    #     if imc < imc_menor:
-    #         imc_menor = imc
-    #         nome_menor = nome
-    #         idade_menor = idade
-    #         altura_menor = altura
-    #         peso_menor = peso
+    if p == 1:
+        imc_menor = imc
+        nome_menor = nome
+        idade_menor = idade
+        altura_menor = altura
+        peso_menor = peso
+    else:
+        if imc < imc_menor:
+            imc_menor = imc
+            nome_menor = nome
+            idade_menor = idade
+            altura_menor = altura
+            peso_menor = peso
 
     # Contador seperado por sexo.
 
-    # if sexo == 'M':
-    #     cont_masc  += 1
-    # else:
-    #     cont_femi += 1
+    if sexo == 'M':
+        cont_masc  += 1
+    else:
+        cont_femi += 1
 
-    if imc <= 24.9:
+    # Contagem de cada classificação
+
+    if imc < 18.5:
+        cont_abaixop += 1
+    elif imc <= 24.9:
         cont_pesoideal += 1
-        porcent_pesoideal = cont_pesoideal / cont_grup * 100
     elif imc <= 29.9:
         cont_sobrepeso += 1
-        porcent_sobrepeso = cont_sobrepeso / cont_grup * 100
     else:
         cont_obesidade += 1
-        porcent_obesidade = cont_obesidade / cont_grup * 100
 
 # Transforamando o imc_maior em "string".
 
@@ -138,9 +144,9 @@ if ',' in peso_format or ',' in altura_format:
     altura_maior_str = altura_maior_str.replace('.', ',')
     altura_menor_str = altura_menor_str.replace('.', ',')
 
-print(f'A média do IMC total do grupo é {media_format}!')
+print()
 
-print(f'{cor['roxo']}PROCESSANDO{cor["limpa"]}', end='')
+print(f'{cor['roxo']}{'PROCESSANDO'}{cor["limpa"]}', end='')
 for c in range(1, 4):
     print(f'{cor['branco']}.{cor['limpa']}', end='')
     sleep(1)
@@ -152,11 +158,11 @@ print()
 print(f'{cor['branco']}-{cor['limpa']}'*20)
 print(f'{cor['ciano']}{'DADOS DO GRUPO':^20}{cor["limpa"]}')
 print(f'{cor['branco']}-{cor['limpa']}'*20)
-print(f'TOTAL DE USUÁRIO: {cont_grup}')
-print(f'TOTAL MASCULINO: {cont_masc}')
-print(f'TOTAL FEMININO: {cont_femi}')
-print(f'MÉDIA DO GRUPO IMC: {media_imc}')
-print(f'CLASSIFICAÇÃO DO GRUPO: ',end='')
+print(f'{cor['branco']}TOTAL DE USUÁRIO: {cont_grup}{cor['limpa']}')
+print(f'{cor['branco']}TOTAL MASCULINO: {cont_masc}{cor['limpa']}')
+print(f'{cor['branco']}TOTAL FEMININO: {cont_femi}{cor['limpa']}')
+print(f'{cor['branco']}MÉDIA DO GRUPO IMC: {media_imc:.2f}{cor['limpa']}')
+print(f'{cor['branco']}CLASSIFICAÇÃO DO GRUPO: {cor['limpa']}', end='')
 
 # Classificação do grupo
 
@@ -173,12 +179,30 @@ elif media_imc <= 40.5:
 elif media_imc > 40.5:
     print(f'{cor['vermelho']}OBESIDADE GRAU III{cor["limpa"]}')
 
+print() # Quebrando uma linha
+
 # Porcentagem do grupo
 
-print(f'DIAGNOSTICO DO IMC DO GRUPO')
-print(f'PESO IDEAL: {porcent_pesoideal}% do grupo ({cont_pesoideal} pessoa)')
-print(f'SOBREPESO: {porcent_sobrepeso}% do grupo ({cont_sobrepeso} pessoa)')
-print(f'OBESIDADE: {porcent_obesidade}% do grupo ({cont_obesidade} pessoa)')
+if cont_pesoideal > 0:
+    porcent_pesoideal = cont_pesoideal / cont_grup * 100
+if cont_sobrepeso > 0:
+    porcent_sobrepeso = cont_sobrepeso / cont_grup * 100
+if cont_obesidade > 0:
+    porcent_obesidade = cont_obesidade / cont_grup * 100
+if cont_abaixop > 0:
+    porcent_abaixop = cont_abaixop / cont_grup * 100
+
+print(f'{cor['azul']}{'DIAGNOSTICO DO IMC DO GRUPO':^35}{cor['limpa']}')
+print() # Quebrando uma linha
+print(f'{cor['ciano']}ABAIXO DO PESO{cor['limpa']}{cor['branco']}: {porcent_abaixop}% do grupo '
+      f'({cont_abaixop} pessoa){cor['limpa']}')
+print(f'{cor['verde']}PESO IDEAL{cor['limpa']}{cor['branco']}: {porcent_pesoideal}% do grupo '
+      f'({cont_pesoideal} pessoa){cor['limpa']}')
+print(f'{cor['amarelo']}SOBREPESO{cor['limpa']}{cor['branco']}: {porcent_sobrepeso}% do grupo '
+      f'({cont_sobrepeso} pessoa){cor['limpa']}')
+print(f'{cor['vermelho']}OBESIDADE{cor['limpa']}{cor['branco']}: {porcent_obesidade}% do grupo '
+      f'({cont_obesidade} pessoa){cor['limpa']}')
+print()
 
 # Maior IMC.
 
