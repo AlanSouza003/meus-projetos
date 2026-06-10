@@ -1,9 +1,13 @@
 import ttg
 from time import sleep
+from datetime import date
 
 cor = {'limpa': '\033[0m', 'vermelho': '\033[1;91m', 'verde': '\033[1;92m', 'ciano': '\033[1;96m',
        'amarelo': '\033[1;93m', 'branco': '\033[1;97m', 'roxo': '\033[1;95m', 'azul': '\033[1;94m'}
-
+data = date.today().day
+mes = date.today().month
+ano = date.today().year
+print(f'{cor["amarelo"]}DATA: {data:02d}/{mes:02d}/{ano}{cor["limpa"]}')
 print(f'{cor["branco"]}-={cor["limpa"]}' * 12)
 print(f'{cor["ciano"]}{"NÚMEROS BINÁRIOS":^25}{cor["limpa"]}')
 print(f'{cor["branco"]}-={cor["limpa"]}' * 12)
@@ -17,21 +21,23 @@ print(f'''{cor["amarelo"]}ESCOLHA A OPÇÃO DESEJADA:{cor["limpa"]}
 print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
 
 escolhido = 0
+
 while True:
     escolhido_str = str(
         input(f'{cor["roxo"]}DIGITE O NÚMERO DA SUA OPÇÃO [DIGITE 0 PARA SAIR]: {cor["limpa"]}'))
     if escolhido_str.isdigit():
         escolhido = int(escolhido_str)
-    if 0 <= escolhido <= 5:
-
-        break
-    elif escolhido_str.isdigit():
-        print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-        print(
-            f'{cor["vermelho"]}VALOR INVÁLIDO! UTILIZE VALORES DE :{cor["limpa"]} '
-            f'{cor["branco"]}1 ATE 5 [OU 0 PARA ENCERRAR].{cor["limpa"]}'
-        )
-        print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
+        if escolhido == 0:
+            break
+        elif 1 <= escolhido <= 5:
+            break
+        else:
+            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
+            print(
+                f'{cor["vermelho"]}VALOR INVÁLIDO! UTILIZE VALORES DE:{cor["limpa"]} '
+                f'{cor["branco"]}1 ATE 5 [OU 0 PARA ENCERRAR].{cor["limpa"]}'
+            )
+            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
     elif escolhido_str.isalpha():
         print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
         print(
