@@ -23,8 +23,8 @@ print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
 escolhido = 0
 
 while True:
-    escolhido_str = str(
-        input(f'{cor["roxo"]}DIGITE O NÚMERO DA SUA OPÇÃO [DIGITE 0 PARA SAIR]: {cor["limpa"]}'))
+    escolhido_str = str(input(f'{cor["roxo"]}DIGITE O NÚMERO DA SUA OPÇÃO '
+                        f'[DIGITE 0 PARA SAIR]: {cor["limpa"]}')).strip()
     if escolhido_str.isdigit():
         escolhido = int(escolhido_str)
         if escolhido == 0:
@@ -169,7 +169,7 @@ if 1 <= escolhido <= 5:
                 f'{cor["verde"]}[ 2 ]{cor["limpa"]} {cor["branco"]}SUBTRAÇÃO{cor["limpa"]}')
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             escolha_str = str(
-                input(f'{cor["roxo"]}DIGITE A OPÇÃO: {cor["limpa"]}'))
+                input(f'{cor["roxo"]}DIGITE A OPÇÃO: {cor["limpa"]}')).strip()
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
 
             if escolha_str not in ['1', '2']:
@@ -737,7 +737,7 @@ if 1 <= escolhido <= 5:
                 print(
                     f'{cor["verde"]}[ 4 ]{cor["limpa"]} {cor["branco"]}PARA QUATRO PROPOSIÇÃO: ["a","b","c","d"]{cor["limpa"]}')
                 escolha_str = str(
-                    input(f'{cor["roxo"]}DIGITE AQUI: {cor["limpa"]}'))
+                    input(f'{cor["roxo"]}DIGITE AQUI: {cor["limpa"]}')).strip()
                 if escolha_str.isdigit():
                     escolha = int(escolha_str)
                 if 1 <= escolha <= 4:
