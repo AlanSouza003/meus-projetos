@@ -1,0 +1,13 @@
+import ttg
+from cores.colors import paleta_cor
+from time import sleep
+from data_atual.data_atual import data_atual
+from funcoes.funcoes import limpatela, perguntar_continuar
+from conversoes.decimais import converter_de_decimal_binario, converter_de_decimal_octal
+from conversoes.decimais import converter_de_decimal_hexadecimal
+from conversoes.binario import converter_binario_para_decimal, converter_binario_para_octal
+from conversoes.binario import converter_binario_para_hexadecimal
+from conversoes.octal import converter_de_octal_para_decimal, converter_octal_para_binario
+from conversoes.octal import converter_octal_para_hexadecimal
+from conversoes.hexadecimal import converter_hexadecimal_para_decimal, converter_hexadecimal_para_binario
+from conversoes.hexadecimal import converter_hexadecimal_para_octal
