@@ -26,7 +26,7 @@ def converter_binario_para_decimal(cor, data_formatada):
                 f'{cor["verde"]}VALOR INTEIRO{cor["limpa"]}{cor["branco"]}: {decimal}{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            if not perguntar_continuar(cor, data_formatada):
+            if not perguntar_continuar(cor, data_formatada, mensagem="Deseja realizar outra conversão?"):
                 break # * Fim do loop de conversão binario para decimal
         else:
             print(

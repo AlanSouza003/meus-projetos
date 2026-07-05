@@ -5,9 +5,10 @@ from time import sleep
 def limpatela():
     return os.system("cls" if os.name == "nt" else "clear")
 
-def perguntar_continuar(cor, data_formatada):
-    titulo_deseja_continuar = f'{cor["amarelo"]}DESEJA CONTINUAR CONVERTENDO?{cor["limpa"]}'
+def perguntar_continuar(cor, data_formatada, mensagem="DESEJA CONTINUAR CONVERTENDO?", mensagem2="SAINDO DA CONVERSÃO"):
+    titulo_deseja_continuar = f'{cor["amarelo"]}{mensagem}{cor["limpa"]}'
     while True:
+        print()
         print(titulo_deseja_continuar)
         continuar = input(
             f'\n{cor["branco"]}DIGITE{cor["limpa"]} {cor["verde"]}[S]{cor["limpa"]}'
@@ -19,7 +20,7 @@ def perguntar_continuar(cor, data_formatada):
         if continuar in ["S", "SIM"]:
             return True
         elif continuar in ["NÃO", "NAO", "N"]:
-            print(f'{cor["ciano"]}SAINDO DA CONVERSÃO{cor["limpa"]}', end="")
+            print(f'{cor["ciano"]}{mensagem2}{cor["limpa"]}', end="")
             for c in range(3):
                 print(f'{cor["ciano"]}.{cor["limpa"]}', end="", flush=True)
                 sleep(1)

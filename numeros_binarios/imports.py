@@ -11,3 +11,8 @@ from conversoes.octal import converter_de_octal_para_decimal, converter_octal_pa
 from conversoes.octal import converter_octal_para_hexadecimal
 from conversoes.hexadecimal import converter_hexadecimal_para_decimal, converter_hexadecimal_para_binario
 from conversoes.hexadecimal import converter_hexadecimal_para_octal
+from calculo_binario.soma_e_subtracao_binaria import somar_binarios, colorir_binario, calculos_binarios
+from calculo_binario.soma_e_subtracao_binaria import subtrair_binarios
+from tabela_verdade.tabela_verdade import tabela_verdade
+from expressoes_boleanas.expressoes import expressoes_booleanas
+from mapa_karnaugh.mapakarnaugh import exibir_mapa, mapa_karnaugh
