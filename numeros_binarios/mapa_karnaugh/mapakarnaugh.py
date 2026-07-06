@@ -166,8 +166,8 @@ def mapa_karnaugh(cor, data_formatada):
                         if valor in ['0', '1']:
                             k_mapa[i][j] = valor
                             break
-                        print(f'  {cor["vermelho"]}DIGITE APENAS 0 OU 1!{cor["limpa"]}')
-                        input(f'  {cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
+                        print(f'{cor["vermelho"]}DIGITE APENAS 0 OU 1!{cor["limpa"]}')
+                        input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                         print("\033[3A\033[J", end="")
                         continue
 
