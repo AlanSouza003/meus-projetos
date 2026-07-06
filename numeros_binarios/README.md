@@ -3,13 +3,8 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white")
 ![SENAI](https://img.shields.io/badge/SENAI-005CA5?style=for-the-badge&logoColor=white)
-<p align="left">
-    <a href="https://github.com/AlanSouza003">
-        <img src="  https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-    </a>
-</p>
-
 <p align="center">
     <img src="images/menu.png" width="900" alt="Menu Principal">
 </p>
