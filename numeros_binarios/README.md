@@ -85,10 +85,12 @@ O projeto é altamente viável devido aos seguintes fatores:
 ### 💻 Como Instalar o ttg em Qualquer Sistema Operacional
 #### **🪟 Windows:**
 Abra o Prompt de Comando (CMD) ou o PowerShell e execute:
-> pip install truth-table-generator
+
+    pip install truth-table-generator
 #### **🍎 Mac:**
 Abra o Terminal e garanta que está usando o gerenciador do Python 3:
-> pip3 install truth-table-generator
+
+    pip3 install truth-table-generator
 #### **🐧 Linux:**
 
     # 1 - Instale o suporte a ambientes virtuais (caso não tenha)
@@ -101,6 +103,6 @@ Abra o Terminal e garanta que está usando o gerenciador do Python 3:
     # 3 - Instale a biblioteca com segurança
     pip install truth-table-generator
 ### 1. Clonar o Repositório
-   ```bash
+    ```bash
     git clone [https://github.com/AlanSouza003/numeros_binarios.git](https://github.com/AlanSouza003/meus-projetos.git)
     cd numeros_binarios
