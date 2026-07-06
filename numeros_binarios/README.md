@@ -233,6 +233,14 @@ Ao executar esse comando, o menu principal da aplicação será exibido no termi
     <img src="images/mapa.png" width="800" alt="Mapa de Karnaugh">
 </p>
 
+#### Validação de Entrada
+
+<p align="center">
+    <img src="images/erro.png" width="800" alt="Validação de Entrada">
+</p>
+
+* **O sistema realiza a validação das entradas fornecidas pelo usuário. Quando um valor incompatível com a operação é informado, uma mensagem de erro é exibida e uma nova entrada é solicitada, garantindo maior robustez e prevenindo interrupções inesperadas da aplicação.**
+
 ## 👨‍💻 Autores
 
 Desenvolvido por:
