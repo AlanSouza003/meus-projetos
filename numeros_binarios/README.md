@@ -1,11 +1,17 @@
 # 🔢 Calculadora de Números Binários e Auxiliar de Lógica
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![CLI](https://img.shields.io/badge/Interface-CLI%20%2F%20Terminal-orange.svg)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+  <a href="https://github.com/AlanSouza003">
+    <img src="  https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+![SENAI](https://img.shields.io/badge/SENAI-005CA5?style=for-the-badge&logoColor=white)
 
 <p align="center">
     <img src="images/menu.png" width="900" alt="Menu Principal">
 </p>
+
 
 Uma ferramenta interativa via linha de comando (CLI) desenvolvida para centralizar conversões entre bases numéricas, aritmética binária e auxiliar no estudo de estruturas lógicas e álgebra booleana.
 
