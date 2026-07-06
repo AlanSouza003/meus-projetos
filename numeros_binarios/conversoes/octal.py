@@ -15,32 +15,22 @@ def converter_de_octal_para_decimal(cor, data_formatada):
         ).lower()
         if len(octal) == 0 or not all(c in "01234567o" for c in octal):
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-            )
-            continue
-        elif octal[0:2] == 'o0':
-            print()
-            print(
-                f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                f'ANTES DO{cor['limpa']} {cor['azul']}"o"{cor['limpa']}.'
-            )
-            print()
             input(
                 f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif octal[0:2] != '0o':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                    f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                    f'{cor['vermelho']}0{cor['limpa']}{cor['azul']}o{cor['limpa']}'
-                    f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["azul"]}o{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
+            )
             print()
             input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
             continue
@@ -88,32 +78,25 @@ def converter_octal_para_binario(cor, data_formatada):
             f'{cor["branco"]}Digite um valor em octal: {cor["limpa"]}'
         ).lower()
         if len(octal_str) == 0 or not all(c in "01234567o" for c in octal_str):
-            print(f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}')
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+            )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-            continue
-        
-        elif octal_str[0:2] == 'o0':
-            print()
-            print(f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                    f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                    f'ANTES DO{cor['limpa']} {cor['azul']}"o"{cor['limpa']}.'
-                )
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            input(
+                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif octal_str[0:2] != '0o':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                f'{cor['vermelho']}0{cor['limpa']}{cor['azul']}o{cor['limpa']}'
-                f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["azul"]}o{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
             )
+            print()
+            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
             continue
         else:
             try:
@@ -167,34 +150,24 @@ def converter_octal_para_hexadecimal(cor, data_formatada):
                 ).lower()
         if len(octal_str) == 0 or not all(c in "01234567o" for c in octal_str):
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
             input(
                 f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-            )
-            continue  # * Fim do loop de conversão octal para hexadecimal
-        elif octal_str[0:2] == 'o0':
-            print()
-            print(f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                f'ANTES DO{cor['limpa']} {cor['azul']}"o"{cor['limpa']}.'
-                )
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif octal_str[0:2] != '0o':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                f'{cor['vermelho']}0{cor['limpa']}{cor['azul']}o{cor['limpa']}'
-                f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["azul"]}o{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
             )
+            print()
+            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
             continue
         else:
             try:

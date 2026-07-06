@@ -30,7 +30,7 @@ def converter_de_decimal_binario(cor, data_formatada):
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO NA CONVERSÃO! TENTE NOVAMENTE.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()
@@ -77,7 +77,7 @@ def converter_de_decimal_octal(cor, data_formatada):
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO NA CONVERSÃO! TENTE NOVAMENTE.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()
@@ -133,7 +133,7 @@ def converter_de_decimal_hexadecimal(cor, data_formatada):
             
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                 f'{cor["vermelho"]}ERRO NA CONVERSÃO! TENTE NOVAMENTE.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()

@@ -15,31 +15,24 @@ def converter_hexadecimal_para_decimal(cor, data_formatada):
         ).lower()
         if len(hexadecimal) == 0 or not all(c in "0123456789ABCDEFabcdefx" for c in hexadecimal):
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}')
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+            )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-            continue 
-        elif hexadecimal[0:2] == 'x0':
-            print()
-            print(f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                    f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                    f'ANTES DO{cor['limpa']} {cor['roxo']}"x"{cor['limpa']}.'
-                )
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            input(
+                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif hexadecimal[0:2] != '0x':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                f'{cor['vermelho']}0{cor['limpa']}{cor['roxo']}x{cor['limpa']}'
-                f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["roxo"]}x{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
             )
+            print()
+            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
             continue
         else:
             try:
@@ -88,31 +81,24 @@ def converter_hexadecimal_para_binario(cor, data_formatada):
         ).lower()
         if len(hexadecimal_str) == 0 or not all(c in "0123456789ABCDEFabcdefx" for c in hexadecimal_str):
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}')
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+            )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-            continue 
-        elif hexadecimal_str[0:2] == 'x0':
-            print()
-            print(f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                    f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                    f'ANTES DO{cor['limpa']} {cor['roxo']}"x"{cor['limpa']}.'
-                )
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            input(
+                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif hexadecimal_str[0:2] != '0x':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                f'{cor['vermelho']}0{cor['limpa']}{cor['roxo']}x{cor['limpa']}'
-                f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["roxo"]}x{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
             )
+            print()
+            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
             continue
         else:
             try:
@@ -168,32 +154,25 @@ def converter_hexadecimal_para_octal(cor, data_formatada):
         ).lower()
         if  len(hexadecimal_str) == 0 or not all(c in "0123456789ABCDEFabcdefx" for c in hexadecimal_str):
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}')
-            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-            continue 
-        elif hexadecimal_str[0:2] == 'x0':
-            print()
-            print(f'{cor["vermelho"]}OPERAÇÃO INVALIDA!{cor["limpa"]}\n{cor["amarelo"]}COLOQUE O '
-                f'PREFIXO{cor["limpa"]} {cor['vermelho']}"0"{cor['limpa']}{cor["amarelo"]} '
-                f'ANTES DO{cor['limpa']} {cor['roxo']}"x"{cor['limpa']}.'
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}OPERAÇÃO INVÁLIDA! TENTE NOVAMENTE.{cor["limpa"]}'
             )
-            print()
-            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
+            input(
+                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
             )
             continue
         elif hexadecimal_str[0:2] != '0x':
             print()
-            print(f'{cor['vermelho']}ERRO!{cor['limpa']}\n'
-                f'{cor['amarelo']}COLOQUE O PREFIXO "{cor['limpa']}'
-                f'{cor['vermelho']}0{cor['limpa']}{cor['roxo']}x{cor['limpa']}'
-                f'{cor['amarelo']}" ANTES DOS NÚMEROS!{cor['limpa']}')
-            print()
-            input(
-                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
+            print(
+                f'{cor["vermelho"]}ERRO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}COLOQUE O PREFIXO CORRETO "{cor["limpa"]}'
+                f'{cor["vermelho"]}0{cor["limpa"]}{cor["roxo"]}x{cor["limpa"]}'
+                f'{cor["amarelo"]}" ANTES DOS NÚMEROS!{cor["limpa"]}'
             )
-            continue   
+            print()
+            input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
+            continue
         else:
             try:
                 decimal = int(hexadecimal_str, 16)

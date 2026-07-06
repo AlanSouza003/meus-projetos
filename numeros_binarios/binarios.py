@@ -1,5 +1,5 @@
 try:
-    from imports import *
+    from importacao.imports import *
     # TODO: CORES
     cor = paleta_cor()
 
@@ -77,7 +77,7 @@ try:
     escolhido = 0
     escolhido_str = ""
     opcao = 0
-    while True:  # ! AJUSTANDO A LOGICA DO LOOP.
+    while True:
         while True:  # * Loop para validar a entrada do menu principal
             if escolhido_str != "0":
                 limpatela()
@@ -129,247 +129,143 @@ try:
             break
 
         if escolhido == 1:  # * Opção 1 – CONVERSÕES
-
             while True:  # * Loop menu de conversões
                 limpatela()
                 print(data_formatada)
                 print(titulo_conversões)
                 print(menu_conversões)
                 print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-                opcao_str = str(
-                    input(
-                        f'{cor["roxo"]}DIGITE SUA OPÇÃO '
-                        f'[DIGITE 0 PARA VOLTAR]: {cor["limpa"]}'
-                    )
-                ).strip()
+                opcao_str = str(input(f'{cor["roxo"]}DIGITE SUA OPÇÃO [DIGITE 0 PARA VOLTAR]: {cor["limpa"]}')).strip()
                 print()
 
-                if not opcao_str.isdigit():  # * Letras ou caracteres especiais
-                    print(
-                        f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                        f'{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}'
-                    )
+                if not opcao_str.isdigit():
+                    print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}')
                     print()
                     input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                     continue
 
                 opcao = int(opcao_str)
-                # TODO: Variaveis de Controle para os submenus
-                op_decimais = None
-                op_binario = None
-                op_octal = None
-                op_hexadecimal = None
                 if opcao == 0:
                     break  # * Volta ao menu principal
 
-                elif opcao == 1:  # * Opção para acessar o menu de conversões decimais
-                    while True:  # * Loop menu decimais
+                elif opcao == 1:  # * Menu de conversões decimais
+                    while True:
                         limpatela()
                         print(data_formatada)
                         print(titulo_decimais)
                         print(menu_decimais)
                         print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-                        op_decimais_str = str(
-                            input(
-                                f'{cor["branco"]}Digite sua opção '
-                                f'[DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}'
-                            )
-                        ).strip()
+                        op_decimais_str = str(input(f'{cor["branco"]}Digite sua opção [DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}')).strip()
                         print()
 
                         if not op_decimais_str.isdigit():
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                             continue
 
                         op_decimais = int(op_decimais_str)
-                        if op_decimais == 0 or 1 <= op_decimais <= 3:
-                            break  # * Volta ao menu de conversões ou continua para a conversão escolhida
-
+                        
+                        if op_decimais == 0:
+                            break  # * Sai do menu de decimais e volta para o menu de conversões
+                        elif op_decimais == 1:
+                            converter_de_decimal_binario(cor, data_formatada)
+                        elif op_decimais == 2:
+                            converter_de_decimal_octal(cor, data_formatada)
+                        elif op_decimais == 3:
+                            converter_de_decimal_hexadecimal(cor, data_formatada)
                         else:
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["branco"]}DIGITE{cor["limpa"]} {cor["verde"]}[1-3]{cor["limpa"]} '
-                                f'{cor["branco"]}ou{cor["limpa"]} '
-                                f'{cor["vermelho"]}[0]{cor["limpa"]} {cor["branco"]}PARA VOLTAR.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
-                            continue
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-3]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
 
-                elif opcao == 2:  # * Opção para acessar o menu de conversões binários
-                    while True:  # * Loop menu Binario
+                elif opcao == 2:  # * Menu de conversões binárias
+                    while True:
                         limpatela()
                         print(data_formatada)
                         print(titulo_binarios)
                         print(menu_binarios)
                         print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-                        op_binario_str = str(
-                            input(
-                                f'{cor["branco"]}Digite sua opção '
-                                f'[DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}'
-                            )
-                        ).strip()
+                        op_binario_str = str(input(f'{cor["branco"]}Digite sua opção [DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}')).strip()
                         print()
 
                         if not op_binario_str.isdigit():
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                             continue
 
                         op_binario = int(op_binario_str)
-
-                        if op_binario == 0 or 1 <= op_binario <= 3:
-                            break  # * Volta ao menu de conversões ou continua para a conversão escolhida
-
+                        
+                        if op_binario == 0:
+                            break
+                        elif op_binario == 1:
+                            converter_binario_para_decimal(cor, data_formatada)
+                        elif op_binario == 2:
+                            converter_binario_para_octal(cor, data_formatada)
+                        elif op_binario == 3:
+                            converter_binario_para_hexadecimal(cor, data_formatada)
                         else:
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["branco"]}DIGITE{cor["limpa"]} {cor["verde"]}[1-3]{cor["limpa"]} '
-                                f'{cor["branco"]}ou{cor["limpa"]} '
-                                f'{cor["vermelho"]}[0]{cor["limpa"]} {cor["branco"]}PARA VOLTAR.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
-                            continue  # * Fim do loop menu de binarios
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-3]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
 
-                elif opcao == 3:  # * Opção para acessar o menu de conversões octal
-                    while True:  # * Loop menu Octal
+                elif opcao == 3:  # * Menu de conversões octal
+                    while True:
                         limpatela()
                         print(data_formatada)
                         print(titulo_octal)
                         print(menu_octal)
                         print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-                        op_octal_str = str(
-                            input(
-                                f'{cor["branco"]}Digite sua opção '
-                                f'[DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}'
-                            )
-                        ).strip()
+                        op_octal_str = str(input(f'{cor["branco"]}Digite sua opção [DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}')).strip()
                         print()
 
                         if not op_octal_str.isdigit():
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                             continue
 
                         op_octal = int(op_octal_str)
-
-                        if op_octal == 0 or 1 <= op_octal <= 3:
-                            break  # * Volta ao menu de conversões ou continua para a conversão escolhida
-
+                        
+                        if op_octal == 0:
+                            break
+                        elif op_octal == 1:
+                            converter_de_octal_para_decimal(cor, data_formatada)
+                        elif op_octal == 2:
+                            converter_octal_para_binario(cor, data_formatada)
+                        elif op_octal == 3:
+                            converter_octal_para_hexadecimal(cor, data_formatada)
                         else:
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["branco"]}DIGITE{cor["limpa"]} {cor["verde"]}[1-3]{cor["limpa"]} '
-                                f'{cor["branco"]}ou{cor["limpa"]} '
-                                f'{cor["vermelho"]}[0]{cor["limpa"]} {cor["branco"]}PARA VOLTAR.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
-                            continue  # * Fim do loop menu de octal
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-3]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
 
-                elif opcao == 4:  # * Opção para acessar o menu de conversões hexadecimal
-                    while True:  # * Loop menu Hexadecimal
+                elif opcao == 4:  # * Menu de conversões hexadecimal
+                    while True:
                         limpatela()
                         print(data_formatada)
                         print(titulo_hexadecimal)
                         print(menu_hexadecimal)
                         print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-                        op_hexadecimal_str = str(
-                            input(
-                                f'{cor["branco"]}Digite sua opção '
-                                f'[DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}'
-                            )
-                        ).strip()
+                        op_hexadecimal_str = str(input(f'{cor["branco"]}Digite sua opção [DIGITE 0 PARA O MENU ANTERIOR]: {cor["limpa"]}')).strip()
                         print()
 
                         if not op_hexadecimal_str.isdigit():
-                            print(
-                                f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                                f'{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}'
-                            )
-                            print()
-                            input(
-                                f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}'
-                            )
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["amarelo"]}UTILIZE APENAS NÚMEROS.{cor["limpa"]}')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                             continue
 
                         op_hexadecimal = int(op_hexadecimal_str)
-
-                        if op_hexadecimal == 0 or 1 <= op_hexadecimal <= 3:
-                            break  # * Volta ao menu de conversões ou continua para a conversão escolhida
-
+                        
+                        if op_hexadecimal == 0:
+                            break
+                        elif op_hexadecimal == 1:
+                            converter_hexadecimal_para_decimal(cor, data_formatada)
+                        elif op_hexadecimal == 2:
+                            converter_hexadecimal_para_binario(cor, data_formatada)
+                        elif op_hexadecimal == 3:
+                            converter_hexadecimal_para_octal(cor, data_formatada)
+                        else:
+                            print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-3]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
+                            print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                 else:
-                    print(
-                        f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}'
-                        f'{cor["branco"]}DIGITE{cor["limpa"]} {cor["verde"]}[1-4]{cor["limpa"]} '
-                        f'{cor["branco"]}ou{cor["limpa"]} '
-                        f'{cor["vermelho"]}[0]{cor["limpa"]} {cor["branco"]}PARA VOLTAR.{cor["limpa"]}'
-                    )
-                    print()
-                    input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-                    continue  # * Fim do loop menu de conversões
-
-                if op_decimais == 1:  # * Opção para conversão decimal para binário
-                    converter_de_decimal_binario(cor, data_formatada)
-
-                elif op_decimais == 2:  # * Opção para conversão decimal para octal
-                    converter_de_decimal_octal(cor, data_formatada)
-
-                elif op_decimais == 3:  # * Opção para conversão decimal para hexadecimal
-                    converter_de_decimal_hexadecimal(cor, data_formatada)
-
-                if op_binario == 1:  # * Opção para conversão binário para decimal
-                    converter_binario_para_decimal(cor, data_formatada)
-
-                elif op_binario == 2:  # * Opção para conversão binário para octal
-                    converter_binario_para_octal(cor, data_formatada)
-
-                elif op_binario == 3:  # * Opção para conversão binário para hexadecimal
-                    converter_binario_para_hexadecimal(cor, data_formatada)
-
-                if op_octal == 1:  # * Opção para conversão octal para decimal
-                    converter_de_octal_para_decimal(cor, data_formatada)
-
-                elif op_octal == 2:  # * Opção para conversão octal para binário
-                    converter_octal_para_binario(cor, data_formatada)
-
-                elif op_octal == 3:  # * Opção para conversão octal para hexadecimal
-                    converter_octal_para_hexadecimal(cor, data_formatada)
- 
-                if op_hexadecimal == 1:
-                    converter_hexadecimal_para_decimal(cor, data_formatada)
-
-                elif op_hexadecimal == 2:  # * Opção para conversão de hexadecimal para binário
-                    converter_hexadecimal_para_binario(cor, data_formatada)
-
-                elif op_hexadecimal == 3: # * Opção para conversão de hexadecimal para octal
-                    converter_hexadecimal_para_octal(cor, data_formatada)
+                    print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-4]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
+                    print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                 
         elif escolhido == 2: # * OPÇÃO 2 – OPERAÇÕES BINÁRIAS
             calculos_binarios(cor, data_formatada)
@@ -382,13 +278,12 @@ try:
 
         elif escolhido == 5:  # * Opção 5 – MAPA DE KARNAUGH
             mapa_karnaugh(cor, data_formatada)
+            
     if escolhido != 0:
         print()
 
-    print(
-        f'{cor["branco"]}─{cor["limpa"]}' * 25)
-    print(
-        f'{cor["verde"]}{'── FIM DO PROGRAMA ──────────────────────────':^25}{cor["limpa"]}')
+    print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
+    print(f"{cor['verde']}{'── FIM DO PROGRAMA ──────────────────────────':^25}{cor['limpa']}")
     
 except KeyboardInterrupt:
     print()

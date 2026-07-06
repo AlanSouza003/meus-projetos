@@ -30,7 +30,9 @@ def converter_binario_para_decimal(cor, data_formatada):
                 break # * Fim do loop de conversão binario para decimal
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                 f'{cor["vermelho"]}ERRO NA CONVERSÃO!{cor["limpa"]}\n'
+                 f'{cor["amarelo"]}DIGITE APENAS {cor["vermelho"]}0s{cor["amarelo"]} E ' 
+                 f'{cor["verde"]}1s{cor["amarelo"]}.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()
@@ -82,7 +84,9 @@ def converter_binario_para_octal(cor, data_formatada):
                 break
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO NA CONVERSÃO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}DIGITE APENAS {cor["vermelho"]}0s{cor["amarelo"]} E ' 
+                f'{cor["verde"]}1s{cor["amarelo"]}.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()
@@ -140,7 +144,9 @@ def converter_binario_para_hexadecimal(cor, data_formatada):
                 break
         else:
             print(
-                f'{cor["vermelho"]}OPÇÃO INVALIDA! TENTE NOVAMENTE.{cor["limpa"]}'
+                f'{cor["vermelho"]}ERRO NA CONVERSÃO!{cor["limpa"]}\n'
+                f'{cor["amarelo"]}DIGITE APENAS {cor["vermelho"]}0s{cor["amarelo"]} E '
+                f'{cor["verde"]}1s{cor["amarelo"]}.{cor["limpa"]}'
             )
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print()
