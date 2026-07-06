@@ -5,7 +5,8 @@
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
   <a href="https://github.com/AlanSouza003">
     <img src="  https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+</a>
+
 ![SENAI](https://img.shields.io/badge/SENAI-005CA5?style=for-the-badge&logoColor=white)
 
 <p align="center">
