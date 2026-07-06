@@ -90,7 +90,7 @@ Abra o Prompt de Comando (CMD) ou o PowerShell e execute:
 Abra o Terminal e garanta que está usando o gerenciador do Python 3:
 > pip3 install truth-table-generator
 #### **🐧 Linux:**
-    ```bash
+
     # 1 - Instale o suporte a ambientes virtuais (caso não tenha)
     sudo apt update && sudo apt install python3-full -y
 
