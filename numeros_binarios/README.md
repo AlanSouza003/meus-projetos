@@ -1,10 +1,44 @@
 # 🔢 Calculadora de Números Binários e Auxiliar de Lógica
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![CLI](https://img.shields.io/badge/Interface-CLI%20%2F%20Terminal-orange.svg)
 
+<p align="center">
+    <img src="images/menu.png" width="900" alt="Menu Principal">
+</p>
+
 Uma ferramenta interativa via linha de comando (CLI) desenvolvida para centralizar conversões entre bases numéricas, aritmética binária e auxiliar no estudo de estruturas lógicas e álgebra booleana.
+
+## 📑 Índice
+
+- [✨ Funcionalidades](#-funcionalidades)
+- [📌 Introdução](#-1-introdução)
+- [💡 Justificativa](#-2-justificativa)
+- [🎯 Objetivos](#-3-objetivos)
+- [⚙️ Escopo e Viabilidade Técnica](#️-4-escopo--viabilidade-técnica)
+- [📊 Análise de Prós e Contras](#-5-análise-de-prós-e-contras)
+- [🚀 Como Executar o Projeto](#-6-como-executar-o-projeto)
+- [📸 Demonstração do Sistema](#-demonstração-do-sistema)
+- [👨‍💻 Autores](#-autores)
+
+## ✨ Funcionalidades
+
+- 🔄 Conversão entre Decimal, Binário, Octal e Hexadecimal
+- ➕ Adição Binária
+- ➖ Subtração Binária
+- 📋 Geração de Tabelas-Verdade
+- 🗺️ Auxílio para Mapas de Karnaugh
+- 🎨 Interface colorida no terminal
+- ✅ Validação de entradas
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+- **Python 3.8+** — Linguagem principal do projeto.
+- **truth-table-generator (ttg)** — Geração automática de tabelas-verdade.
+- **Git** — Controle de versão.
+- **GitHub** — Hospedagem e versionamento do código-fonte.
 
 ---
 
@@ -65,44 +99,146 @@ O projeto é altamente viável devido aos seguintes fatores:
 ---
 
 ## 🚀 6. Como Executar o Projeto
-## 📸 Demonstração do Sistema
 
-### Menu Principal
-![Menu Principal](images/menu.png)
-
-**Nesse momento o sistema pede para o usuário digitar a sua opção. Supomos ele escolheu a opção 1.**
-
-### Conversão:
-![Conversão Binária](images/conversao.png)
----
-### Operações Binárias 
-![Operação Binária](images/operacoes.png)
----
 ### Pré-requisitos 📝
-* Certifique-se de ter o **Python 3.8 ou superior** instalado em sua máquina
-* Instale o ttg na sua máquina
+* Certifique-se de ter o **Python 3.8 ou superior** instalado em sua máquina.
 
-### 💻 Como Instalar o ttg em Qualquer Sistema Operacional
-#### **🪟 Windows:**
-Abra o Prompt de Comando (CMD) ou o PowerShell e execute:
-
-    pip install truth-table-generator
-#### **🍎 Mac:**
-Abra o Terminal e garanta que está usando o gerenciador do Python 3:
-
-    pip3 install truth-table-generator
-#### **🐧 Linux:**
-
-    # 1 - Instale o suporte a ambientes virtuais (caso não tenha)
-    sudo apt update && sudo apt install python3-full -y
-
-    # 2 - Crie e ative o ambiente na pasta do projeto
-    python3 -m venv venv
-    source venv/bin/activate
-
-    # 3 - Instale a biblioteca com segurança
-    pip install truth-table-generator
 ### 1. Clonar o Repositório
-    ```bash
-    git clone [https://github.com/AlanSouza003/numeros_binarios.git](https://github.com/AlanSouza003/meus-projetos.git)
-    cd numeros_binarios
+Abra o terminal do seu computador e digite os comandos abaixo para baixar o projeto e acessar a pasta dele:
+
+```bash
+git clone https://github.com/AlanSouza003/numeros_binarios.git
+cd numeros_binarios
+```
+
+### 2. Instalar a biblioteca ttg (Dependência)
+Escolha o bloco de comandos correspondente ao seu sistema operacional:
+
+#### 🪟 **Windows**:
+Abra o **Prompt de Comando (CMD)** ou o **PowerShell e execute**:
+```bash
+pip install truth-table-generator
+```
+#### 🍎 **Mac**:
+Abra o **Terminal** e garanta que está usando o gerenciador do **Python 3**:
+```bash
+pip3 install truth-table-generator
+```
+#### 🐧 **Linux**:
+Abra o **Terminal** do Linux e configure o ambiente virtual para 
+instalar a biblioteca com segurança e isolada do sistema:
+```bash
+# 1 - Instale o suporte a ambientes virtuais (caso não tenha)
+sudo apt update && sudo apt install python3-full -y
+
+# 2 - Crie e ative o ambiente na pasta do projeto
+python3 -m venv venv
+source venv/bin/activate
+
+# 3 - Instale a biblioteca com segurança
+pip install truth-table-generator
+```
+### 3. Rodar o Programa
+Após concluir a instalação da biblioteca acima, basta iniciar o script principal:
+```bash
+python3 binarios.py
+```
+Ao executar esse comando, o menu principal da aplicação será exibido no terminal.
+
+## 📸 Demonstração do Sistema
+#### Menu Principal
+<p align="center">
+    <img src="images/menu.png" width="900" alt="Menu Principal">
+</p>
+
+* **Nesse momento o sistema pede para o usuário digitar a sua opção. Supomos que ele escolheu a opção 1.**
+
+#### Conversões Binárias
+<p align="center">
+    <img src="images/conversao.png" width="800" alt="Conversões Binárias">
+</p>
+
+* **O sistema apresenta ao usuário quatro opções de conversão entre bases numéricas.**
+
+    1. **Decimal**
+    2. **Binário**
+    3. **Octal**
+    4. **Hexadecimal**
+
+#### Conversão de Decimal para Binário
+<p align="center">
+    <img src="images/decimalparabinario.png" width="800" alt="Conversão de Decimal para Binário">
+</p>
+
+#### Operações Binárias
+<p align="center">
+    <img src="images/operacao.png" width="800" alt="Operações Binárias">
+</p>
+
+* **O sistema disponibiliza as opções de adição e subtração para realização dos cálculos**
+
+#### Menu de parcelas
+<p align="center">
+    <img src="images/parcelas.png" width="800" alt="Escolha da Quantidade de Parcelas">
+</p>
+
+* **O usuário escolhe a quantidade de parcelas**
+
+#### Adição com 2 Parcelas
+<p align="center">
+    <img src="images/adicao.png" width="800" alt="Adição Binária">
+</p>
+
+### Tabela-Verdade
+#### Escolha das proposições
+<p align="center">
+    <img src="images/proposicao.png" width="800" alt="Escolha das Proposições">
+</p>
+
+* **Neste menu, o usuário escolhe a quantidade de proposições que serão exibidas na tabela-verdade.**
+
+#### Proposição de A até C
+<p align="center">
+    <img src="images/deAateC.png" width="800" alt="Tabela-Verdade com Proposições A até C">
+</p>
+
+#### Expressões Booleanas
+<p align="center">
+    <img src="images/expressoes.png" width="800" alt="Expressões Booleanas">
+</p>
+
+* **Na aba de expressões booleanas, o sistema vai pedir para o usuário digitar a primeira e a segunda proposição. Depois vai perguntar qual operador ele deseja utilizar e também vai perguntar se a operação está negada, e por último até qual proposição o usuário deseja ir.**
+### Exibição da tabela com o valor negado
+<p align="center">
+    <img src="images/tabela.png" width="800" alt="Tabela-Verdade">
+</p>
+
+#### Menu do Mapa Karnaugh
+<p align="center">
+    <img src="images/menukarnaugh.png" width="800" alt="Menu do Mapa de Karnaugh">
+</p>
+
+* **O usuário escolhe a quantidade de variáveis para gerar o mapa de Karnaugh.**
+### Preenchendo o Mapa com 4 variáveis
+<p align="center">
+    <img src="images/variaveis.png" width="800" alt="Preenchimento do Mapa de Karnaugh">
+</p>
+
+* **Preenchendo o mapa**
+#### Mapa de Karnaugh
+<p align="center">
+    <img src="images/mapa.png" width="800" alt="Mapa de Karnaugh">
+</p>
+
+## 👨‍💻 Autores
+
+Desenvolvido por:
+
+- Alan Souza
+- Alexandre
+- Gabriel
+- Jovane
+- Thiago
+- Vinicius
+
+Este projeto foi desenvolvido como trabalho acadêmico, com o objetivo de auxiliar no estudo de sistemas de numeração, operações binárias, lógica booleana e mapas de Karnaugh.
