@@ -1,4 +1,4 @@
-from funcoes.funcoes import limpatela, perguntar_continuar
+from funcoes.funcoes import limpatela, perguntar_continuar,barra_processando
 
 def converter_hexadecimal_para_decimal(cor, data_formatada):
     titulo_hexadecimal_para_decimal = (  # * Título para a opção de conversão hexadecimal para decimal.
@@ -52,6 +52,9 @@ def converter_hexadecimal_para_decimal(cor, data_formatada):
                         hexadecimal_colorido += (
                             f'{cor["roxo"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR HEXADECIMAL{cor["limpa"]}: {hexadecimal_colorido}\n'
                     f'{cor["verde"]}VALOR INTEIRO{cor["limpa"]}{cor["branco"]}: {decimal}{cor["limpa"]}'
@@ -125,6 +128,9 @@ def converter_hexadecimal_para_binario(cor, data_formatada):
                         hexadecimal_colorido += (
                             f'{cor["roxo"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR HEXADECIMAL{cor["limpa"]}: {hexadecimal_colorido}\n'
                     f'{cor["verde"]}VALOR BINÁRIO:{cor["limpa"]} {binario_colorido}'
@@ -204,6 +210,9 @@ def converter_hexadecimal_para_octal(cor, data_formatada):
                         hexadecimal_colorido += (
                             f'{cor["roxo"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR HEXADECIMAL{cor["limpa"]}: {hexadecimal_colorido}\n'
                     f'{cor["verde"]}VALOR OCTAL:{cor["limpa"]} {octal_colorido}'
@@ -218,3 +227,4 @@ def converter_hexadecimal_para_octal(cor, data_formatada):
                 print()
                 input(f'{cor["branco"]}PRESSIONE ENTER PARA DIGITAR UM NOVO VALOR...{cor["limpa"]}')
                 continue
+            

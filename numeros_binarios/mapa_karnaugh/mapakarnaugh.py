@@ -1,5 +1,5 @@
 from time import sleep
-from funcoes.funcoes import limpatela, perguntar_continuar
+from funcoes.funcoes import limpatela, perguntar_continuar,barra_processando
 
 neg = '\u0305'
 
@@ -99,7 +99,6 @@ def exibir_mapa(k_mapa, cfg, cor):
             linha += celula_colorida
         print(linha)
 
-
 def mapa_karnaugh(cor, data_formatada):
     titulo_mapa = (
         f'{cor["branco"]}╔══════════════════════════╗{cor["limpa"]}\n'
@@ -170,12 +169,8 @@ def mapa_karnaugh(cor, data_formatada):
                         input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                         print("\033[3A\033[J", end="")
                         continue
-
-            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            for c in range(4):
-                print(f'\r\033[1;95m{"PROCESSANDO" + "." * c:^25}\033[0m', end='', flush=True)
-                sleep(1.5)
             print()
+            barra_processando(cor)
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print(f'{cor["verde"]}RESULTADO{cor["limpa"]}')
             print()

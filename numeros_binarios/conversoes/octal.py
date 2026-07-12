@@ -1,4 +1,4 @@
-from funcoes.funcoes import limpatela, perguntar_continuar
+from funcoes.funcoes import limpatela, perguntar_continuar, barra_processando
 
 def converter_de_octal_para_decimal(cor, data_formatada):
     titulo_octal_para_decimal = (  # * Título para a opção de conversão octal para decimal.
@@ -50,6 +50,9 @@ def converter_de_octal_para_decimal(cor, data_formatada):
                         octal_colorido += (
                             f'{cor["azul"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR OCTAL{cor["limpa"]}: {octal_colorido}\n'
                     f'{cor["verde"]}VALOR INTEIRO{cor["limpa"]}{cor["branco"]}: {decimal}{cor["limpa"]}'
@@ -121,6 +124,9 @@ def converter_octal_para_binario(cor, data_formatada):
                         octal_colorido += (
                             f'{cor["azul"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR OCTAL{cor["limpa"]}: {octal_colorido}\n'
                     f'{cor["verde"]}VALOR BINÁRIO:{cor["limpa"]} {binario_colorido}'
@@ -208,6 +214,9 @@ def converter_octal_para_hexadecimal(cor, data_formatada):
                         octal_colorido += (
                             f'{cor["azul"]}{char}{cor["limpa"]}'
                         )
+                print()
+                barra_processando(cor)
+                print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
                 print(
                     f'{cor["verde"]}VALOR OCTAL{cor["limpa"]}: {octal_colorido}\n'
                     f'{cor["verde"]}VALOR HEXADECIMAL:{cor["limpa"]} {hexadecimal_colorido}'

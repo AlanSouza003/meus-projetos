@@ -33,3 +33,10 @@ def perguntar_continuar(cor, data_formatada, mensagem="DESEJA CONTINUAR CONVERTE
             limpatela()
             print(data_formatada)
             continue
+
+def barra_processando(cor, texto="PROCESSANDO"):
+    for i in range(21):
+        barra = "█" * i + "░" * (20 - i)
+        print(f'\r{cor["verde"]}[{barra}] {i * 5}%{cor["limpa"]}', end="", flush=True)
+        sleep(0.09)
+    print()

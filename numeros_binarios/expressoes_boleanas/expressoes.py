@@ -1,6 +1,6 @@
 import ttg
 from time import sleep
-from funcoes.funcoes import limpatela, perguntar_continuar
+from funcoes.funcoes import limpatela, perguntar_continuar, barra_processando
 
 def expressoes_booleanas(cor, data_formatada):
     proposicoes_disponiveis = ["a", "b", "c", "d"]
@@ -111,12 +111,8 @@ def expressoes_booleanas(cor, data_formatada):
                 expressao = expressoes[escolha]
             else:
                 expressao = f"{valor1} {funcao} {valor2}"
-
-            print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
-            for c in range(4):
-                print(f'\r\033[1;95m{"PROCESSANDO" + "." * c:^25}\033[0m', end="", flush=True)
-                sleep(1.5)
             print()
+            barra_processando(cor)
             print(f'{cor["branco"]}─{cor["limpa"]}' * 25)
             print(f'{cor["verde"]}RESULTADO{cor["limpa"]}')
 

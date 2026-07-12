@@ -11,10 +11,11 @@ try:
     menu_principal = (  # * Menu principal do programa.
         f'{cor["amarelo"]}ESCOLHA A OPÇÃO DESEJADA:{cor["limpa"]}\n'
         f'{cor["verde"]}[ 1 ]{cor["limpa"]} {cor["verde"]}CONVERSÃO{cor["limpa"]}\n'
-        f'{cor["verde"]}[ 2 ]{cor["limpa"]} {cor["roxo"]}OPERAÇÕES BINÁRIAS{cor["limpa"]}\n'
-        f'{cor["verde"]}[ 3 ]{cor["limpa"]} {cor["azul"]}TABELA VERDADE{cor["limpa"]}\n'
-        f'{cor["verde"]}[ 4 ]{cor["limpa"]} {cor["amarelo"]}EXPRESSÕES BOOLEANAS{cor["limpa"]}\n'
-        f'{cor["verde"]}[ 5 ]{cor["limpa"]} {cor["ciano"]}MAPA DE KARNAUGH{cor["limpa"]}\n'
+        f'{cor["verde"]}[ 2 ]{cor["limpa"]} {cor["ciano"]}NOMES EM BINÁRIOS{cor["limpa"]}\n'
+        f'{cor["verde"]}[ 3 ]{cor["limpa"]} {cor["roxo"]}OPERAÇÕES BINÁRIAS{cor["limpa"]}\n'
+        f'{cor["verde"]}[ 4 ]{cor["limpa"]} {cor["azul"]}TABELA VERDADE{cor["limpa"]}\n'
+        f'{cor["verde"]}[ 5 ]{cor["limpa"]} {cor["amarelo"]}EXPRESSÕES BOOLEANAS{cor["limpa"]}\n'
+        f'{cor["verde"]}[ 6 ]{cor["limpa"]} {cor["ciano"]}MAPA DE KARNAUGH{cor["limpa"]}\n'
         f'{cor["vermelho"]}[ 0 ]{cor["limpa"]} {cor["vermelho"]}ENCERRAR O PROGRAMA{cor["limpa"]}'
     )
     titulo_conversões = (  # * Subtítulo para a opção de conversão.
@@ -125,6 +126,7 @@ try:
                 print()
                 input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
                 continue  # * Fim do loop de validação do menu principal
+        
         if escolhido == 0:  # * Opção para encerrar o programa
             break
 
@@ -266,17 +268,20 @@ try:
                 else:
                     print(f'{cor["vermelho"]}❌ ENTRADA INVÁLIDA!\n{cor["limpa"]}{cor["branco"]}DIGITE {cor["verde"]}[1-4]{cor["limpa"]} ou {cor["vermelho"]}[0]{cor["limpa"]} PARA VOLTAR.')
                     print(); input(f'{cor["branco"]}PRESSIONE ENTER PARA CONTINUAR...{cor["limpa"]}')
-                
-        elif escolhido == 2: # * OPÇÃO 2 – OPERAÇÕES BINÁRIAS
+
+        elif escolhido == 2: # * OPÇÃO 2 - NOMES EM BINARIOS
+            conversor_de_nomes(cor, data_formatada)
+
+        elif escolhido == 3: # * OPÇÃO 3 – OPERAÇÕES BINÁRIAS
             calculos_binarios(cor, data_formatada)
 
-        elif escolhido == 3: # * OPÇÃO 3 – TABELA VERDADE
+        elif escolhido == 4: # * OPÇÃO 4 – TABELA VERDADE
            tabela_verdade(cor, data_formatada)
 
-        elif escolhido == 4:  # * Opção 4 – EXPRESSÕES BOOLEANAS
+        elif escolhido == 5:  # * Opção 5 – EXPRESSÕES BOOLEANAS
            expressoes_booleanas(cor, data_formatada)
 
-        elif escolhido == 5:  # * Opção 5 – MAPA DE KARNAUGH
+        elif escolhido == 6:  # * Opção 6 – MAPA DE KARNAUGH
             mapa_karnaugh(cor, data_formatada)
             
     if escolhido != 0:
@@ -287,9 +292,9 @@ try:
     
 except KeyboardInterrupt:
     print()
-    print(f'\n{cor["vermelho"]}PROGRAMA ENCERRADO!{cor["limpa"]}')
+    print(f'\n{cor["amarelo"]}ENCERRADO PELO USUÁRIO {cor["limpa"]}')
     input(f'{cor["branco"]}PRESSIONE ENTER PARA SAIR...{cor["limpa"]}')
 except EOFError:
     print()
-    print(f'\n{cor["vermelho"]}PROGRAMA ENCERRADO!{cor["limpa"]}')
+    print(f'\n{cor["amarelo"]}ENCERRADO PELO USUÁRIO.{cor["limpa"]}')
     input(f'{cor["branco"]}PRESSIONE ENTER PARA SAIR...{cor["limpa"]}')

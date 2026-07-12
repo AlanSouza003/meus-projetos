@@ -16,3 +16,4 @@ from calculo_binario.soma_e_subtracao_binaria import subtrair_binarios
 from tabela_verdade.tabela_verdade import tabela_verdade
 from expressoes_boleanas.expressoes import expressoes_booleanas
 from mapa_karnaugh.mapakarnaugh import exibir_mapa, mapa_karnaugh
+from nomes_em_binario.nomesembinario import conversor_de_nomes, nome_para_binario
