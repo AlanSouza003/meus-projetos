@@ -98,7 +98,7 @@ try:
                 print()
             if escolhido_str.isdigit():
                 escolhido = int(escolhido_str)
-                if escolhido == 0 or 1 <= escolhido <= 5:
+                if escolhido == 0 or 1 <= escolhido <= 6:
                     break
                 else:
                     print(

@@ -32,7 +32,7 @@ def tabela_verdade(cor, data_formatada):
             escolha = int(escolha_str)
 
             if escolha == 0:
-                return  
+                return
             elif 1 <= escolha <= 4:
                 break
             else:

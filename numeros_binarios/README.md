@@ -245,11 +245,6 @@ Ao executar esse comando, o menu principal da aplicação será exibido no termi
 
 Desenvolvido por:
 
-- Alan Souza
-- Alexandre
-- Gabriel
-- Jovane
-- Thiago
-- Vinicius
-
+ - Alan Souza
+ 
 Este projeto foi desenvolvido como trabalho acadêmico, com o objetivo de auxiliar no estudo de sistemas de numeração, operações binárias, lógica booleana e mapas de Karnaugh.

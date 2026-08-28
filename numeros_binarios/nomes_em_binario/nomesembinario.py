@@ -74,12 +74,8 @@ def conversor_de_nomes(cor, data_formatada):
             )
             print()
 
-            if not perguntar_continuar(
-                cor,
-                data_formatada,
-                "DESEJA CONVERTER OUTRO NOME?",
-                "SAINDO DA CONVERSÃO DOS NOMES",
-            ):
+            if not perguntar_continuar(cor, data_formatada, "DESEJA CONVERTER OUTRO NOME?", 
+                                       "SAINDO DA CONVERSÃO DOS NOMES",):
                 break
 
     except KeyboardInterrupt:
